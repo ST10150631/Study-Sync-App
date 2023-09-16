@@ -1,0 +1,422 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                   
+                    xmlns:fa ="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
+    
+    
+
+    <!-- Background Images-->
+    <!--*******************************************************************************************************************************************************************************-->
+
+    <!-- Semester Background Images -->
+    <Style x:Key="BackgroundSemester" TargetType="Grid">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/UniBuilding.jpg"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Normal Background Images -->
+    <Style x:Key="BackgroundHome" TargetType="Grid">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/StudyBackgound2.jpeg"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Modules Background Images -->
+    <Style x:Key="BackgroundModules" TargetType="Grid">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/StudyBackGround.jpg"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- Modules Background Images -->
+    <Style x:Key="BackgroundSettings" TargetType="Grid">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Images/Library2.jpg"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--*******************************************************************************************************************************************************************************-->
+
+
+
+    <!--*******************************************************************************************************************************************************************************-->
+
+
+    <!-- Buttons -->
+
+    <!-- Allows use of font Awesome Library -->
+    <!-- Creating a style for menu buttons -->
+    <Style x:Key="menuButton" TargetType="RadioButton">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Height" Value="5,0,0,5"/>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource  ForegroundBrush}" />
+        <Setter Property="BorderBrush"  Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border Background="{TemplateBinding Background}" BorderThickness="2,0,0,0"
+                    BorderBrush="{TemplateBinding BorderBrush}" >
+                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!-- If Button is hovered over-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="{DynamicResource TertiaryBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource TertiaryBrush}" />
+            </Trigger>
+            <!-- If Button is clicked-->
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="{DynamicResource SecondaryBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource SecondaryBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!-- Menu Button Icon -->
+    <Style x:Key="menuButtonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Width" Value="22" />
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Margin" Value="35,0,20,0"/>
+
+    </Style>
+
+    <!-- Menu Button Text-->
+    <Style x:Key="menuButtonText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value= "{DynamicResource ForegroundBrush}"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <!--Pill Buttons-->
+    <!-- PILL BUTTON Primary: -->
+    <Style x:Key="btnPrimary" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource SecondaryBrush}"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template" >
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!-- Trigger -->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+
+                <Setter Property="Margin" Value="0,0,10,10"/>
+                <Setter Property="Background" Value="#146eb4"/>
+            </Trigger>
+        </Style.Triggers>
+
+
+    </Style>
+    <!-- Primary Button Icon -->
+    <Style x:Key="PrimaryButtonIcon" TargetType="fa:IconImage">
+        <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}" />
+        <Setter Property="Width" Value="22" />
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Margin" Value="10,0,20,0"/>
+
+    </Style>
+    <!-- Primary Button Text-->
+    <Style x:Key="PrimaryButtonText" TargetType="TextBlock">
+        <Setter Property="Foreground" Value= "{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="13.5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    
+    <!-- Rounded Window Button  Style-->
+   
+    <Style x:Key="RoundedWindowBtn" TargetType="Button">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="FontWeight" Value="ExtraBold"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Width" Value="25" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="VerticalAlignment" Value="Center"/>
+
+        <Setter Property="Template" >
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                              CornerRadius="50"
+                              Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    
+    
+    <!--#region Music Player Buttons -->
+    <Style x:Key="btnMusic" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource  TertiaryBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template" >
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                                    CornerRadius="50"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!-- Trigger -->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+
+                <Setter Property="Margin" Value="0,0,2,2"/>
+                <Setter Property="Background" Value="{DynamicResource SecondaryBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+
+
+    </Style>
+
+
+    <!--#EndRegion Music Player Buttons -->
+    
+    
+    
+    
+    <!-- Home page buttons-->
+    <Style x:Key="HomeButtons" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Height" Value="80"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Template" >
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                            CornerRadius="10"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0,0,10,10"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    
+    <!-- Home Page Button Text-->
+    <Style x:Key="HomeBtnTxt" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="White"/>
+
+    </Style>
+
+    <!-- Menu Panel -->
+    <Style x:Key="MainMenu" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource TertiaryBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TertiaryBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="CornerRadius" Value="0,0,0,10" />
+        
+
+        <!-- If Menu is hovered over -->
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource TertiaryBrush}" />
+                <Setter Property="Width" Value="180"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Trigger>
+        </Style.Triggers>
+
+
+    </Style>
+
+
+    <!-- Login Menu-->
+
+    <Style x:Key="LoginMenu" TargetType="Menu">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="BorderBrush" Value="#000000"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="TextBlock.FontSize" Value="30"/>
+
+    </Style>
+    
+    
+    
+   
+    
+    <!--*******************************************************************************************************************************************************************************-->
+
+
+
+    <!--*******************************************************************************************************************************************************************************-->
+    <!-- Text -->
+
+    <!-- Primary Title -->
+    <Style x:Key="TitlePrimary" TargetType="TextBlock">
+
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+    </Style>
+
+    <!-- Primary Text Style -->
+
+    <Style x:Key="TxtPrimary" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+
+    </Style>
+
+    <!-- Secondary Text Style -->
+
+    <Style x:Key="TxtSecondary" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+
+    </Style>
+
+    <!--  TextBox Primary Theme-->
+    <Style x:Key="TxtBxPrimary" TargetType="TextBox" >
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="BorderThickness" Value="0.5"/>
+        <Style.Triggers>
+            <!-- If Button is hovered over-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="{DynamicResource SecondaryBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource SecondaryBrush}" />
+            </Trigger>
+            <!-- If Button is clicked-->
+            <Trigger Property="IsKeyboardFocused"  Value="True">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="{DynamicResource ForegroundBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource PrimaryBrush}" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+    
+    
+    <!-- TextBox Incorrect Value -->
+    <Style x:Key="TxtBxInvalid" TargetType="TextBox" >
+        <Setter Property="Background" Value="#ff6459" />
+        <Setter Property="BorderBrush" Value="#fc2617"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="BorderThickness" Value="0.5"/>
+    </Style>
+
+    <!--  Password Primary Theme-->
+    <Style x:Key="PwBxPrimary" TargetType="PasswordBox" >
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="BorderThickness" Value="0.5"/>
+        <Style.Triggers>
+            <!-- If Button is hovered over-->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="{DynamicResource SecondaryBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource SecondaryBrush}" />
+            </Trigger>
+            <!-- If Button is clicked-->
+            <Trigger Property="IsKeyboardFocused"  Value="True">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="Background" Value="{DynamicResource ForegroundBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource PrimaryBrush}" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!--*******************************************************************************************************************************************************************************-->
+
+    <!-- Datagrid Haeders -->
+    <Style x:Key="ColHeaders" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource SecondaryBrush}"/>
+    </Style>
+
+    <!-- Datagrid -->
+    <Style x:Key="DataGrdPrimary" TargetType="DataGrid" >
+        <Setter Property="Background" Value="{DynamicResource MenuBrush}"/>
+        <Setter Property="Margin" Value="0"/>
+
+    </Style>
+    
+    
+    
+    
+
+</ResourceDictionary>

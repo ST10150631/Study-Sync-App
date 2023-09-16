@@ -1,0 +1,185 @@
+﻿<Page x:Class="Prog6212_POE_ST10150631.Pages.HomePg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:fa ="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+      xmlns:local="clr-namespace:Prog6212_POE_ST10150631.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="950" d:DesignWidth="900"
+      Title="HomePg" 
+      Background="Transparent">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <Grid>
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="300" />
+                <RowDefinition  Height="590"/>
+            </Grid.RowDefinitions>
+
+
+
+            <Border CornerRadius="20,20,0,0" Background="{DynamicResource TertiaryBrush}" Grid.Row="0">
+                <TextBlock Style="{DynamicResource TitlePrimary}" Text="Home Page" HorizontalAlignment="Center"/>
+            </Border>
+
+
+            <Grid Background="{DynamicResource PrimaryBrush}" Opacity="0.6" Grid.Row="1"/>
+            <Grid Grid.Row="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+
+                <!-- Functions -->
+
+
+
+                <!-- Guides the user to nav bar-->
+                <StackPanel Grid.Column="0" Grid.Row="2">
+                    <StackPanel>
+                        <fa:IconImage Icon="ArrowLeft" Foreground="White" Height="50" Width="72" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock  Text="Nav Bar " Style="{DynamicResource  HomeBtnTxt}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Home Page Buttons  -->
+
+
+                <Button x:Name="BtnSemester" Grid.Row="4" Style="{DynamicResource HomeButtons}" Background="#2c7a76" Click="BtnSemester_Click">
+                    <StackPanel>
+                        <StackPanel>
+                            <fa:IconImage Icon="Calendar" Foreground="White" Height="50" Width="72" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock  Text="Semesters" Style="{DynamicResource  HomeBtnTxt}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                        </StackPanel>
+                    </StackPanel>
+
+                </Button>
+
+
+                <Button x:Name="BtnModules" Grid.Row="2" Grid.Column="1" Style="{DynamicResource HomeButtons}" Background="#2c4b7a" Click="BtnModules_Click">
+                    <StackPanel>
+                        <StackPanel>
+                            <fa:IconImage Icon="TableList" Foreground="White" Height="50" Width="72" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock  Text="Modules" Style="{DynamicResource  HomeBtnTxt}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                        </StackPanel>
+                    </StackPanel>
+
+                </Button>
+
+
+                <Button x:Name="BtnMusic" Grid.Row="2" Grid.Column="2" Style="{DynamicResource HomeButtons}" Background="#6c419e" Click="BtnMusic_Click">
+                    <StackPanel>
+                        <StackPanel>
+                            <fa:IconImage Icon="ItunesNote" Foreground="White" Height="50" Width="72" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock  Text="Music" Style="{DynamicResource  HomeBtnTxt}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                        </StackPanel>
+                    </StackPanel>
+
+                </Button>
+
+
+                <Button x:Name="BtnSettings" Grid.Row="2" Grid.Column="3" Style="{DynamicResource HomeButtons}" Background="#6e737a" Click="BtnSettings_Click">
+                    <StackPanel>
+                        <StackPanel>
+                            <fa:IconImage Icon="Gear" Foreground="White" Height="50" Width="72" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock  Text="Settings" Style="{DynamicResource  HomeBtnTxt}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                        </StackPanel>
+                    </StackPanel>
+
+                </Button>
+
+
+                <Button x:Name="BtnStudy" Grid.Row="2" Grid.Column="4" Style="{DynamicResource HomeButtons}" Background="#1db954" Click="BtnSettings_Click">
+                    <StackPanel>
+                        <StackPanel>
+                            <fa:IconImage Icon="Clock" Foreground="White" Height="50" Width="72" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock  Text="Study" Style="{DynamicResource  HomeBtnTxt}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                        </StackPanel>
+                    </StackPanel>
+
+                </Button>
+                <!-- Calendar -->
+
+
+
+
+
+            </Grid>
+            <!-- Content-->
+            <Grid x:Name="CalendarGrd" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+
+                <!-- Code for Left panel-->
+
+                <Border Background="{DynamicResource PrimaryBrush}"  CornerRadius="20,0,0,20" Margin="10,10,0,10">
+                    <StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Current Semnester:" Style="{DynamicResource TitlePrimary}"/>
+
+                        </StackPanel>
+                        <StackPanel>
+                            <ItemsControl ItemsSource="{Binding SemesterData}">
+
+                            </ItemsControl>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="Semester Modules:" Style="{DynamicResource TitlePrimary}"/>
+                        </StackPanel>
+                    </StackPanel>
+
+
+
+                </Border>
+                <!--Code for Right Panel-->
+                <Border Grid.Column="1" Background="{DynamicResource MenuBrush}" CornerRadius="0,20,20,0" Margin="0,10,10,10">
+                    <ItemsControl>
+                        
+                    </ItemsControl>
+                    
+
+
+                </Border>
+
+
+            </Grid>
+
+        </Grid>
+    </ScrollViewer>
+
+
+</Page>

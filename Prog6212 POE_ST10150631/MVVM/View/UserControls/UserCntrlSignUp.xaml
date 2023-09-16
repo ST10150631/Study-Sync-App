@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="Prog6212_POE_ST10150631.UserControls.UserCntrlSignUp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa ="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:local="clr-namespace:Prog6212_POE_ST10150631.UserControls"
+             mc:Ignorable="d" 
+                        d:DesignHeight="500" Width="400">
+    <Grid>
+        <!-- Title Text -->
+        <StackPanel Background="{DynamicResource PrimaryBrush}">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Style="{DynamicResource TitlePrimary}" Text="Sign Up:" VerticalAlignment="Center" Margin="150,0,0,0"/>
+
+            </StackPanel>
+            <!-- Icon -->
+            <StackPanel Orientation="Horizontal">
+
+                <TextBlock  Width="100"  Margin="150,10,0,30">
+
+                    <fa:IconImage Icon="UserGraduate" VerticalAlignment="Center"  Foreground="{DynamicResource ForegroundBrush}" Height="45" Width="99"/>
+                </TextBlock>
+
+
+            </StackPanel>
+
+            <!-- Name-->
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock x:Name="TxtName" Text="Name:       "  Style="{DynamicResource TxtSecondary}" Margin="20,10,15,5"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBox x:Name="TxtBxName"  Margin="19,10,20,5" Width="200" Style="{DynamicResource TxtBxPrimary}"/>
+                </StackPanel>
+
+            </StackPanel>
+            <!-- Username -->
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock x:Name="TxtUsername" Text="Username: "  Style="{DynamicResource TxtSecondary}" Margin="15,10,15,5"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBox x:Name="TxtBxUsername" Margin="20,10,20,5" Width="200" Style="{DynamicResource TxtBxPrimary}"/>
+                </StackPanel>
+            </StackPanel>
+            <!-- Password -->
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock x:Name="TxtPW" Text="Password: "  Style="{DynamicResource TxtSecondary}" Margin="20,10,15,5"/>
+                </StackPanel>
+                <StackPanel>
+                    <PasswordBox x:Name="BoxPW" Margin="20,10,20,5" Width="200" Style="{DynamicResource PwBxPrimary}"/>
+                </StackPanel>
+
+                <!-- Button-->
+               
+
+            </StackPanel>
+                <StackPanel Height="60" Orientation="Horizontal">
+                <Button x:Name="BtnSignUp" Content="Sign Up" Style="{DynamicResource btnPrimary}" Height="20" Width="200" Margin="100,30,15,5" Click="BtnSignUp_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+    </Grid>
+</UserControl>
+

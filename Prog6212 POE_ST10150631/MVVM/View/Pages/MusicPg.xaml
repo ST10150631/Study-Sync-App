@@ -1,0 +1,118 @@
+﻿<Page x:Class="Prog6212_POE_ST10150631.Pages.MusicPg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:fa ="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+      xmlns:local="clr-namespace:Prog6212_POE_ST10150631.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="950" 
+      d:DesignWidth="900"
+          Title="MusicPg"
+      Margin="5" 
+      Background="Transparent">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+    
+        <Border CornerRadius="20,20,0,0" Background="{DynamicResource TertiaryBrush}" Grid.Row="0" Grid.Column="1">
+            <TextBlock Style="{DynamicResource TitlePrimary}" Text="Music Page" HorizontalAlignment="Center"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1">
+            <ScrollViewer>
+                 <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                
+                <Border Background="{DynamicResource MenuBrush}" CornerRadius="20" Margin="5">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <fa:IconImage Icon="FileAudio" Foreground="{DynamicResource ForegroundBrush}" Width="30" Margin="5,0,5,0"/>
+                            <TextBlock Text="My Music: " Style="{DynamicResource TitlePrimary }" FontSize="20" Margin="5,0,5,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </Border >
+                <Border Grid.Column="1" Background="{DynamicResource MenuBrush}" CornerRadius="20" Margin="5" >
+                    
+                </Border>
+                
+            </Grid>
+            </ScrollViewer>
+           
+        </Border>
+        
+        <!-- Player Border -->
+        <Border Background="{DynamicResource  PrimaryBrush}" CornerRadius="20" Margin="5" Grid.Row="3">
+
+            <StackPanel Orientation="Horizontal" Margin="0"  HorizontalAlignment="Center" >
+                <!-- Skip Back Btn-->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0">
+                    <Button Style="{DynamicResource btnMusic}" Height="40" Width="40">
+                        <fa:IconImage Icon="Backward" Foreground="{DynamicResource ForegroundBrush}" Width="15" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Button>
+                </StackPanel>
+                
+                <!-- 15s Back Btn-->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0">
+                    <Button Style="{DynamicResource btnMusic}" Height="40" Width="40">
+                        <StackPanel>
+                            <fa:IconImage Icon="ArrowLeftRotate" Foreground="{DynamicResource ForegroundBrush}" Width="15" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="15s"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                
+                <!-- Play Btn-->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0">
+                <Button Style="{DynamicResource btnMusic}" Height="50" Width="50">
+                <fa:IconImage Icon="Play" Foreground="{DynamicResource ForegroundBrush}" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                </Button>
+            </StackPanel>
+
+            <!-- Pause Btn-->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0">
+                <Button Style="{DynamicResource btnMusic}" Height="50" Width="50">
+                        <fa:IconImage Icon="Pause" Foreground="{DynamicResource ForegroundBrush}" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Button>
+            </StackPanel>
+
+                <!-- 15s Forward Btn-->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0">
+                    <Button Style="{DynamicResource btnMusic}" Height="40" Width="40">
+                        <StackPanel>
+                            <fa:IconImage Icon="ArrowRightRotate" Foreground="{DynamicResource ForegroundBrush}" Width="15" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="15s"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!-- Skip Forward Btn-->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0">
+                    <Button Style="{DynamicResource btnMusic}" Height="40" Width="40">
+                        <fa:IconImage Icon="Forward" Foreground="{DynamicResource ForegroundBrush}" Width="15" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Button>
+                </StackPanel>
+
+
+            </StackPanel>
+
+
+
+        </Border>
+
+
+
+
+    </Grid>
+
+
+</Page>
