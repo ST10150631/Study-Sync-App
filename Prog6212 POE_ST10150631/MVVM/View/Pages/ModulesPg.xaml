@@ -53,7 +53,7 @@
 
                             </StackPanel>
                             <StackPanel Orientation="Vertical"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="40,0,0,0">
-                                <ComboBox x:Name="CmboBxFilterSemester" Width="150" DisplayMemberPath="Name"/>
+                                <ComboBox x:Name="CmboBxFilterSemester" Width="150" DisplayMemberPath="Name" SelectionChanged="CmboBxFilterSemester_SelectionChanged"/>
                             </StackPanel>
                             <StackPanel Orientation="Vertical"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="40,0,0,0">
                                 <Button x:Name="BtnFilter" Style="{DynamicResource btnPrimary}" Width="70" Height="30" Background="{DynamicResource TertiaryBrush}">
@@ -87,7 +87,7 @@
 
                                 <!-- Data Grid -->
                     <Border Background="{DynamicResource  PrimaryBrush}" Grid.Row="3" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
-                        <DataGrid x:Name="DtaGrdModules"  Style="{DynamicResource DataGrdPrimary}">
+                        <DataGrid x:Name="DtaGrdModules"  Style="{DynamicResource DataGrdPrimary}"  ItemsSource="{Binding ModuleData}" AutoGenerateColumns="False">
 
                             <!--<!Column Header-->
                             <DataGrid.Resources >
@@ -100,11 +100,12 @@
 
                             </DataGrid.Resources>
                             <DataGrid.Columns >
-                                <DataGridTextColumn Header=" Module Code" Width="180"/>
-                                <DataGridTextColumn Header=" Module Name" Width="180"/>
-                                <DataGridTextColumn Header=" Module Credits" Width="180"/>
-                                <DataGridTextColumn Header=" Module Weekly Class Hours" Width="180"/>
-                                <DataGridTextColumn Header=" Semester" Width="180"/>
+                                <DataGridTextColumn Header=" Module Code" Width="150" Binding="{Binding ModuleName}"/>
+                                <DataGridTextColumn Header=" Module Name" Width="150" Binding="{Binding ModuleCode}"/>
+                                <DataGridTextColumn Header=" Module Credits" Width="150" Binding="{Binding Credits}"/>
+                                <DataGridTextColumn Header=" Module Weekly Class Hours" Width="150" Binding="{Binding ClassHrs}"/>
+                                <DataGridTextColumn Header=" Weekly self-study hours" Width="150" Binding="{Binding SelfStudyHrs}"/>
+                                <DataGridTextColumn Header=" Semester" Width="150" Binding="{Binding Semester}"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
@@ -130,7 +131,7 @@
                                 <TextBox x:Name="TxtBxName" Style="{DynamicResource TxtBxPrimary}" Height="20"  Margin="10"/>
                                 <TextBox x:Name="TxtBxCredits" Style="{DynamicResource TxtBxPrimary}" Height="20"  Margin="10"/>
                                 <TextBox x:Name="TxtBxClassHrs" Style="{DynamicResource TxtBxPrimary}" Height="20"  Margin="10,20,10,15"/>
-                                <ComboBox x:Name="CmboBxSelectSemester" Height="20"  Margin="10,10" DisplayMemberPath="Name"/>
+                                <ComboBox x:Name="CmboBxSelectSemester" Height="20"  Margin="10,10"  DisplayMemberPath="Name"/>
                             </StackPanel>
 
                         </StackPanel>
@@ -169,8 +170,8 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" Width="300" VerticalAlignment="Center" >
-                                <ComboBox x:Name="CmoboBxModules" DisplayMemberPath="ModuleName" />
-                            </StackPanel>
+                                <ComboBox x:Name="CmoboBxModules"   ItemsSource="{Binding ModuleData}" DisplayMemberPath="ModuleName" />
+                            </StackPanel> 
                             
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="200" Margin="20,0,0,0" Height="30">
                                 <Button x:Name="BtnDelete"  Style="{DynamicResource btnPrimary}" Height="30" Background="#FFFF420E">

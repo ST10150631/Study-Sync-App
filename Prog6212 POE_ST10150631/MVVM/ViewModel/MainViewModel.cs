@@ -1,4 +1,5 @@
-﻿using Prog6212_POE_ST10150631.MVVM.Model;
+﻿using ImageUploadClassLibrary.Classes;
+using Prog6212_POE_ST10150631.MVVM.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         public static ValidationViewModel ValidationClassHere { get; } = new ValidationViewModel();
 
         public static ModulesViewModel ModulesViewModel { get; } = new ModulesViewModel();  
+        public static ImageManipulationClass ImageManipulationClassHere { get; } = new ImageManipulationClass();
     }
 }

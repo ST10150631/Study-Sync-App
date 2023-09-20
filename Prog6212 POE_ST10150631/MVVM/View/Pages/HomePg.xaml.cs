@@ -1,7 +1,7 @@
 ﻿using Prog6212_POE_ST10150631.MVVM.View;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-
 
 namespace Prog6212_POE_ST10150631.Pages
 {
@@ -10,6 +10,19 @@ namespace Prog6212_POE_ST10150631.Pages
     /// </summary>
     public partial class HomePg : Page
     {
+        /// <summary>
+        /// Keeps track of the image index displayed 
+        /// </summary>
+        private int ImageCount = 0;
+
+
+        /// <summary>
+        /// Holds the list of images 
+        /// </summary>
+        private List<Image> ImageList = new List<Image>();
+
+
+
         public HomePg()
         {
             InitializeComponent();
@@ -43,6 +56,6 @@ namespace Prog6212_POE_ST10150631.Pages
             parentWindow.ContentPane.Content = settingsPg;
         }
 
-
+       
     }
 }

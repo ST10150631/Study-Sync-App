@@ -26,18 +26,51 @@ namespace Prog6212_POE_ST10150631.Pages
         public ModulesPg()
         {
             InitializeComponent();
+            
+
             DtaGrdModules.DataContext = MainViewModel.ModulesViewModel;
-            CmboBxFilterSemester.DataContext = MainViewModel.SemestersViewModel;
-            CmboBxFilterSemester.ItemsSource = MainViewModel.SemestersViewModel.SemesterData;
+
 
             CmboBxSelectSemester.DataContext = MainViewModel.SemestersViewModel;
             CmboBxSelectSemester.ItemsSource = MainViewModel.SemestersViewModel.SemesterData;
 
-            CmoboBxModules.DataContext = MainViewModel.ModulesViewModel;
-            CmoboBxModules.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
+            CmboBxFilterSemester.DataContext = MainViewModel.SemestersViewModel;
+            CmboBxFilterSemester.ItemsSource = MainViewModel.SemestersViewModel.SemesterData;
+            DataContext = MainViewModel.ModulesViewModel;
+
         }
 
         private void BtnAddModule_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainViewModel.ValidationClassHere.IsNewModule(TxtBxName,TxtBxCode) == false)
+            {
+                MainViewModel.ValidationClassHere.ErrorMessage("Module Name must be unique and cannot be Empty.");
+                TxtBxCode.Style = (Style)appStyles["TxtBxInvalid"];
+                TxtBxName.Style = (Style)appStyles["TxtBxInvalid"];
+            }
+            else if (MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxCredits)==false)
+            {
+                MainViewModel.ValidationClassHere.ErrorMessage("Module Credits must be a positive number.");
+                TxtBxCredits.Style = (Style)appStyles["TxtBxInvalid"];
+            }
+            else if (MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxClassHrs)==false)
+            {
+                MainViewModel.ValidationClassHere.ErrorMessage("Module Class Hours must be a positive number.");
+                TxtBxClassHrs.Style = (Style)appStyles["TxtBxInvalid"];
+            }
+            else if (MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxClassHrs)==true && MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxCredits)==true && MainViewModel.ValidationClassHere.IsNewModule(TxtBxName, TxtBxCode)==true && string.IsNullOrEmpty(CmboBxSelectSemester.Text) == false)
+            {
+
+                MainViewModel.ModulesViewModel.PopulateModuleList(TxtBxName.Text, TxtBxCode.Text,double.Parse(TxtBxClassHrs.Text),double.Parse(TxtBxCredits.Text),CmboBxSelectSemester.Text);
+                TxtBxCode.Style = (Style)appStyles["TxtBxPrimary"];
+                TxtBxName.Style = (Style)appStyles["TxtBxPrimary"];
+                TxtBxCredits.Style = (Style)appStyles["TxtBxPrimary"];
+                TxtBxClassHrs.Style = (Style)appStyles["TxtBxPrimary"];
+            }
+
+        }
+
+        private void CmboBxFilterSemester_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

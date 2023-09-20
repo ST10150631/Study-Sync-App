@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -173,6 +174,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -204,6 +206,10 @@
     <Resource Include="Images\StudyBackgound2.jpeg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ImageUploadClassLibrary\ImageUploadClassLibrary.csproj">
+      <Project>{798753d0-9a49-43eb-9768-af994b0b5ee4}</Project>
+      <Name>ImageUploadClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ST10150631_PROG_6212_POE_ClassLibrary\ST10150631_PROG_6212_POE_ClassLibrary.csproj">
       <Project>{d183fd77-0be9-41d1-909d-8db07cf3865b}</Project>
       <Name>ST10150631_PROG_6212_POE_ClassLibrary</Name>

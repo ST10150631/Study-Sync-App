@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prog6212_POE_ST10150631.MVVM.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,12 +57,13 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
            return false;
         }
 
-        public bool IsNewModule(TextBox TextBox)
+        public bool IsNewModule(TextBox TextBox,TextBox code)
         {
             if (TxtBxNotBlank(TextBox))
             {
                 var sem = MainViewModel.WorkerClassHere.SearchModules (TextBox.Text);
-                if (sem == null)
+                ModuleClass FoundModule = MainViewModel.WorkerClassHere.ModuleList.Find(module => module.ModuleCode == code.Text);
+                if (sem == null && FoundModule == null)
                 {
                     return true;
                 }

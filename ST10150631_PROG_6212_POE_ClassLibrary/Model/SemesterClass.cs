@@ -13,7 +13,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public List<ModuleClass> SemesterModuleList;
+        public List<ModuleClass> SemesterModuleList = new List<ModuleClass>();
 
         public int NumModules {get;set;}
 

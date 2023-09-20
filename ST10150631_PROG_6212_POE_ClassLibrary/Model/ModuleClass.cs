@@ -15,6 +15,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         public double ClassHrs { get; set; }
         public double SelfStudyHrs { get; set; }
         public double CompletedSelfHrs { get; set; }
+        public string Semester {  get; set; }   
         public ModuleClass()
         {
             
