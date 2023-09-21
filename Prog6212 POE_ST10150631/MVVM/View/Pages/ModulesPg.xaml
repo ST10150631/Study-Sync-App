@@ -10,7 +10,7 @@
            Title="ModulesPg" Margin="5" Background="Transparent">
 
     <Border CornerRadius="20,20,10,10" >
-        <ScrollViewer>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
             
             <Grid Background="{DynamicResource MenuBrush}" Opacity="0.6"/>
@@ -48,31 +48,9 @@
                                 
                                 <!-- Filter -->
                             </StackPanel >
-                            <StackPanel Orientation="Vertical"   VerticalAlignment="Center" HorizontalAlignment="Right">
-                                <TextBlock Text="Filter by semester:" Foreground="{DynamicResource ForegroundBrush}"  VerticalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
-
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="40,0,0,0">
-                                <ComboBox x:Name="CmboBxFilterSemester" Width="150" DisplayMemberPath="Name" SelectionChanged="CmboBxFilterSemester_SelectionChanged"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="40,0,0,0">
-                                <Button x:Name="BtnFilter" Style="{DynamicResource btnPrimary}" Width="70" Height="30" Background="{DynamicResource TertiaryBrush}">
-                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                        
-                                        <StackPanel VerticalAlignment="Center">
-                                            <fa:IconImage Icon="Filter"  Foreground="{DynamicResource ForegroundBrush}" Width="20"/>
-                                        </StackPanel>
-                                        <StackPanel>
-                                            <TextBlock Text="Filter" Style="{DynamicResource TxtPrimary}"/>
-                                        </StackPanel>
-                                        
-                                     
-                                    
-                                    </StackPanel>
-
-                                    
-                                </Button>
-                            </StackPanel>
+                            <StackPanel Orientation="Vertical"   VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                            <StackPanel Orientation="Vertical"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="40,0,0,0"/>
+                            <StackPanel Orientation="Vertical"   VerticalAlignment="Center" HorizontalAlignment="Right" Margin="40,0,0,0"/>
 
                         </StackPanel>
                 
@@ -87,7 +65,7 @@
 
                                 <!-- Data Grid -->
                     <Border Background="{DynamicResource  PrimaryBrush}" Grid.Row="3" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
-                        <DataGrid x:Name="DtaGrdModules"  Style="{DynamicResource DataGrdPrimary}"  ItemsSource="{Binding ModuleData}" AutoGenerateColumns="False">
+                        <DataGrid x:Name="DtaGrdModules"  Style="{DynamicResource DataGrdPrimary}"  ItemsSource="{Binding ModuleData}" AutoGenerateColumns="False" IsReadOnly="True">
 
                             <!--<!Column Header-->
                             <DataGrid.Resources >
@@ -131,7 +109,7 @@
                                 <TextBox x:Name="TxtBxName" Style="{DynamicResource TxtBxPrimary}" Height="20"  Margin="10"/>
                                 <TextBox x:Name="TxtBxCredits" Style="{DynamicResource TxtBxPrimary}" Height="20"  Margin="10"/>
                                 <TextBox x:Name="TxtBxClassHrs" Style="{DynamicResource TxtBxPrimary}" Height="20"  Margin="10,20,10,15"/>
-                                <ComboBox x:Name="CmboBxSelectSemester" Height="20"  Margin="10,10"  DisplayMemberPath="Name"/>
+                                <ComboBox x:Name="CmboBxSelectSemester" Template="{DynamicResource CmboBxTemplate}" Height="20"  Margin="10,10"  DisplayMemberPath="Name"/>
                             </StackPanel>
 
                         </StackPanel>
@@ -170,7 +148,7 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" Width="300" VerticalAlignment="Center" >
-                                <ComboBox x:Name="CmoboBxModules"   ItemsSource="{Binding ModuleData}" DisplayMemberPath="ModuleName" />
+                                <ComboBox x:Name="CmoboBxModules" Template="{DynamicResource CmboBxTemplate}"   ItemsSource="{Binding ModuleData}" DisplayMemberPath="ModuleName"/>
                             </StackPanel> 
                             
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="200" Margin="20,0,0,0" Height="30">

@@ -34,8 +34,6 @@ namespace Prog6212_POE_ST10150631.Pages
             CmboBxSelectSemester.DataContext = MainViewModel.SemestersViewModel;
             CmboBxSelectSemester.ItemsSource = MainViewModel.SemestersViewModel.SemesterData;
 
-            CmboBxFilterSemester.DataContext = MainViewModel.SemestersViewModel;
-            CmboBxFilterSemester.ItemsSource = MainViewModel.SemestersViewModel.SemesterData;
             DataContext = MainViewModel.ModulesViewModel;
 
         }

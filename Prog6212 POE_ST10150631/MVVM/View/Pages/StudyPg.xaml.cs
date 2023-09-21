@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prog6212_POE_ST10150631.MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,20 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
     /// </summary>
     public partial class StudyPg : Page
     {
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public StudyPg()
         {
             InitializeComponent();
+            SelectSemester.DataContext = MainViewModel.SemestersViewModel;
+            moduleItemsControl.DataContext = MainViewModel.ModulesViewModel;
+            
         }
+        //======================================================= End of Method ===================================================
+
+
+
     }
 }

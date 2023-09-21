@@ -60,7 +60,12 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             }
         }
 
-
+        /// <summary>
+        /// Searches for a module in the moduleList using a moduleName
+        /// </summary>
+        /// <param name="searchName"></param>
+        /// <returns></returns>
+        /// 
         public ModuleClass SearchModules(string searchName)
         {
 
@@ -82,6 +87,10 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         {
             double SelfStudyHrs =0;
             SelfStudyHrs = (credits * 10) / weeks - ClassHrs;
+            if (SelfStudyHrs < 0)
+            {
+                SelfStudyHrs = 0;
+            }
             return SelfStudyHrs;
 
         }
