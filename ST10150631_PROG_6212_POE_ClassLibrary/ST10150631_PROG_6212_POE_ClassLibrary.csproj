@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Model\ModuleClass.cs" />
     <Compile Include="Model\MusicClass.cs" />
-    <Compile Include="Model\NotesClass.cs" />
+    <Compile Include="Model\NotificationClass.cs" />
     <Compile Include="Model\SemesterClass.cs" />
     <Compile Include="Model\WorkerClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

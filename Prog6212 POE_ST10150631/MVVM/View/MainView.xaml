@@ -117,7 +117,7 @@
 
 
              <!-- This Grid Holds the Menu-->
-            <Grid  Margin="0,0,0,0" HorizontalAlignment="Left" Width="180" Grid.Row="1">
+            <Grid  Margin="0,0,0,0" HorizontalAlignment="Left" Width="200" Grid.Row="1">
                 <Border Grid.Column="0"  CornerRadius="0,0,0,10"  Style="{DynamicResource  MainMenu}">
 
 
@@ -135,7 +135,7 @@
 
                         <!-- Menu Buttons-->
 
-                        <!-- Semester  radio Btn -->
+                        <!-- Home  radio Btn -->
                         <RadioButton x:Name="RbtnHome" Style="{DynamicResource menuButton}" Height="57"  Margin="20,0,0,0" Checked="RbtnHome_Checked" >
 
                             <StackPanel Orientation="Horizontal" >
@@ -152,7 +152,7 @@
                             <StackPanel Orientation="Horizontal" >
                                 <fa:IconImage Icon="Calendar" Style="{DynamicResource menuButtonIcon}"  Margin="0,0,10,0"/>
 
-                                <TextBlock Text="Semester " Style="{DynamicResource menuButtonText}" />
+                                <TextBlock Text="Add Semester " Style="{DynamicResource menuButtonText}" />
 
                             </StackPanel>
                         </RadioButton>
@@ -164,12 +164,23 @@
                             <StackPanel Orientation="Horizontal" >
                                 <fa:IconImage Icon="TableList" Style="{DynamicResource menuButtonIcon}"  Margin="0,0,10,0"/>
 
-                                <TextBlock Text="Modules " Style="{DynamicResource menuButtonText}" />
+                                <TextBlock Text="Add Module " Style="{DynamicResource menuButtonText}" />
 
                             </StackPanel>
                         </RadioButton>
                         
-                        
+                        <!-- Study  radio Btn -->
+                        <RadioButton x:Name="RbtnStudy" Style="{DynamicResource menuButton}" Height="57"  Margin="20,0,0,0" Checked="RbtnStudy_Checked" >
+
+                            <StackPanel Orientation="Horizontal" >
+                                <fa:IconImage Icon="Clock" Style="{DynamicResource menuButtonIcon}"  Margin="0,0,10,0"/>
+
+                                <TextBlock Text="Study " Style="{DynamicResource menuButtonText}" />
+
+                            </StackPanel>
+                        </RadioButton>
+
+
                         <!-- Music   radio Btn -->
                         <RadioButton x:Name="RbtnMusic" Style="{DynamicResource menuButton}" Height="57"  Margin="20,0,0,0" Checked="RbtnMusic_Checked" >
 

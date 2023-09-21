@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ST10150631_PROG_6212_POE_ClassLibrary.Model;
+using System;
 using System.Collections.Generic;
 
 namespace Prog6212_POE_ST10150631.MVVM.Model
@@ -9,26 +10,45 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         /// Holds SemesterClass objects 
         /// </summary>
         public List<SemesterClass> SemesterList = new List<SemesterClass>();
+        /// <summary>
+        /// Holds module class objects as a List
+        /// </summary>
         public List<ModuleClass> ModuleList = new List<ModuleClass>();
+        /// <summary>
+        /// Holds notification Class objects as a List
+        /// </summary>
+        public List <NotificationClass> NotificationList = new List<NotificationClass>();
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public WorkerClass()
         {
 
 
         }
+        //======================================================= End of Method ===================================================
+
+
         /// <summary>
         /// Adds SemesterClass to the SemesterList
         /// <param name="semester"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public void AddSemester(SemesterClass semester)
         {
 
             SemesterList.Add(semester); 
         }
+        //======================================================= End of Method ===================================================
+
 
 
         /// <summary>
         /// Deletes a semester from the semesterList
         /// </summary>
         /// <param name="name"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public void RemoveSemester(string name)
         {
             if (SearchSemester(name)!=null)
@@ -36,13 +56,16 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
                 SemesterList.Remove(SearchSemester(name));
             }
         }
-    
+            //======================================================= End of Method ===================================================
+
+
 
         /// <summary>
         /// Searches for a Semeseter in the semsterList
         /// </summary>
         /// <param name="searchName"></param>
         /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public SemesterClass SearchSemester(string searchName)
         {
 
@@ -59,13 +82,15 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
                 return null;
             }
         }
+        //======================================================= End of Method ===================================================
+
 
         /// <summary>
         /// Searches for a module in the moduleList using a moduleName
         /// </summary>
         /// <param name="searchName"></param>
         /// <returns></returns>
-        /// 
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public ModuleClass SearchModules(string searchName)
         {
 
@@ -82,7 +107,17 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
                 return null;
             }
         }
+        //======================================================= End of Method ===================================================
 
+
+        /// <summary>
+        /// Calculates the number of weekly self study hours required by a module
+        /// </summary>
+        /// <param name="ClassHrs"></param>
+        /// <param name="credits"></param>
+        /// <param name="weeks"></param>
+        /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public double CalculateSelfStudyHrs(double ClassHrs, double credits, double weeks)
         {
             double SelfStudyHrs =0;
@@ -94,8 +129,22 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             return SelfStudyHrs;
 
         }
+        //======================================================= End of Method ===================================================
+
+
+        //public double AddHrsStudied(string ModuleName,double completedHrs)
+        //{
+        //    ModuleClass Mod = SearchModules(ModuleName);
+        //    if(Mod != null)
+        //    {
+        //        Mod.CompletedSelfHrs = completedHrs;
+        //    }
+            
+
+        //}
 
 
 
     }
 }
+//############################################################### END OF FILE ########################################################

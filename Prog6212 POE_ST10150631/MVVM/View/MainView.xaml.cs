@@ -1,4 +1,5 @@
-﻿using Prog6212_POE_ST10150631.Pages;
+﻿using Prog6212_POE_ST10150631.MVVM.View.Pages;
+using Prog6212_POE_ST10150631.Pages;
 using System.Windows;
 using System.Windows.Input;
 
@@ -196,6 +197,20 @@ namespace Prog6212_POE_ST10150631.MVVM.View
             login.Show();
             Window parentWindow = Window.GetWindow(this);
             parentWindow.Close();
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RbtnStudy_Checked(object sender, RoutedEventArgs e)
+        {
+            StudyPg studyPg = new StudyPg();
+            ContentPane.Content = studyPg;
+
+            Grd.Style = (Style)FindResource("BackgroundSemester");
         }
         //------------------------------------------------------------------------ End of Method ------------------------------------------------------------------------------------------
 

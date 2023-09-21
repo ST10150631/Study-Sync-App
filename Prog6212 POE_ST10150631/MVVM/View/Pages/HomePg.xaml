@@ -6,7 +6,7 @@
       xmlns:fa ="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
       xmlns:local="clr-namespace:Prog6212_POE_ST10150631.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="1550" d:DesignWidth="900"
+      d:DesignHeight="1750" d:DesignWidth="900"
       Title="HomePg" 
       Background="Transparent">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -149,16 +149,20 @@
                     <StackPanel>
                         <StackPanel>
                             <TextBlock Text="Add Notification :" Style="{DynamicResource TitlePrimary}" Margin="10"/>
-
-
+                            
+                            <TextBlock Text="Notification Name:" Style="{DynamicResource TxtPrimary}" Margin="20,10"/>
+                            <TextBox x:Name="TxtBxNoteName"  Margin="20,10" Style="{DynamicResource TxtBxPrimary}"/>
                             <TextBlock Text="Module Name:" Style="{DynamicResource TxtPrimary}" Margin="20,10"/>
+
                             <ComboBox x:Name="CmboBxSelectModule" Template="{DynamicResource CmboBxTemplate}"  Width="250" ItemsSource="{Binding ModuleData}" DisplayMemberPath="ModuleName"/>
                             <TextBlock Text="Time:" Style="{DynamicResource TxtPrimary}" Margin="20,10"/>
-                            <DatePicker x:Name="DatePick"  Width="250"/>
+                            <TextBox x:Name="TxtBxTime" PreviewTextInput="TimeTextBox_PreviewTextInput" Margin="20,10" Style="{DynamicResource TxtBxPrimary}" TextChanged="TimeTextBox_TextChanged" />
+                            <TextBlock Text="Date :" Style="{DynamicResource TxtPrimary}" Margin="20,10"/>
+                            <DatePicker x:Name="DatePick"  Width="250" SelectedDateFormat="Short"/>
 
                             <TextBlock Text=" Details:" Style="{DynamicResource TxtPrimary}" Margin="20,10"/>
                             <RichTextBox x:Name="TxtBxDetails"  Width="250" Height="196"/>
-                            <Button x:Name="BtnAddNote" Content="Add Class" Style="{DynamicResource btnPrimary}" Width="150" Height="30" Margin="0,20"/>
+                            <Button x:Name="BtnAddNote" Content="Add Notification" Style="{DynamicResource btnPrimary}" Width="150" Height="30" Margin="0,20" Click="BtnAddNote_Click"/>
 
 
                         </StackPanel>
@@ -176,9 +180,30 @@
                 <Border Grid.Column="1" Background="{DynamicResource PrimaryBrush}" CornerRadius="0,20,20,0" Margin="0,10,10,10">
                     <StackPanel Margin="0">
                         <TextBlock Text="Upcoming Notifications: " Style="{DynamicResource TitlePrimary}" HorizontalAlignment="Center"/>
-                        <ItemsControl>
-                          
+                        <ItemsControl Name="noteItemsControl" Margin="0" Grid.Row="1" ItemsSource="{Binding NoteData}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="{DynamicResource ForegroundBrush}" BorderThickness="1" CornerRadius="10" Margin="10">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" Text="{Binding NoteName}" Style="{DynamicResource TxtSecondary}" Foreground="{DynamicResource ForegroundBrush}" FontSize="14" FontWeight="Bold" Margin="1" HorizontalAlignment="Center"/>
+                                            <TextBlock Grid.Row="1" Text="{Binding module}" Style="{DynamicResource TxtSecondary}" Foreground="{DynamicResource ForegroundBrush}" FontSize="14"  Margin="1" HorizontalAlignment="Center"/>
+                                            <TextBlock Grid.Row="2" Text="{Binding NoteDate, StringFormat=dd/MM/yyyy HH:mm}" Style="{DynamicResource TxtSecondary}" Foreground="{DynamicResource ForegroundBrush}" FontSize="14"  Margin="1" HorizontalAlignment="Center"/>
+                                            <TextBlock Grid.Row="3" Text="{Binding NoteDescription}" Style="{DynamicResource TxtSecondary}" Foreground="{DynamicResource ForegroundBrush}" FontSize="14"  Margin="1" HorizontalAlignment="Center"/>
+                                            
+                                            <fa:IconImage Grid.Row="4" Icon="Bell" Height="30" Foreground="{DynamicResource ForegroundBrush}"/>
 
+
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
                         </ItemsControl>
                     </StackPanel>
 
@@ -220,7 +245,7 @@
 
             </Border>
 
-                <Border Grid.Column="1" Background="{DynamicResource TertiaryBrush}"  CornerRadius="20,20,20,20" Margin="10,10,10,10" Grid.Row="2">
+                <Border Grid.Column="1" Background="{DynamicResource PrimaryBrush}"  CornerRadius="20,20,20,20" Margin="10,10,10,10" Grid.Row="2">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>

@@ -18,5 +18,9 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         public static ValidationViewModel ValidationClassHere { get; } = new ValidationViewModel();
 
         public static ModulesViewModel ModulesViewModel { get; } = new ModulesViewModel();
+
+        public static HomeViewModel HomeViewModelHere { get; } = new HomeViewModel(); 
+
+        public static StudyPgViewModel StudyPgViewModel { get; } = new StudyPgViewModel();
     }
 }

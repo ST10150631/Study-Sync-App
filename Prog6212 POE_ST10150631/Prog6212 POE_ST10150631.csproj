@@ -66,6 +66,7 @@
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ModulesViewModel.cs" />
     <Compile Include="MVVM\ViewModel\SemesterViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\StudyPgViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ValidationViewModel.cs" />
     <Compile Include="MVVM\View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -90,6 +91,9 @@
     </Compile>
     <Compile Include="MVVM\View\Pages\StudyPg.xaml.cs">
       <DependentUpon>StudyPg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UserControls\UserCntrlClock.xaml.cs">
+      <DependentUpon>UserCntrlClock.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\UserControls\UserCntrlLogin.xaml.cs">
       <DependentUpon>UserCntrlLogin.xaml</DependentUpon>
@@ -146,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\Styles\Original.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\UserControls\UserCntrlClock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

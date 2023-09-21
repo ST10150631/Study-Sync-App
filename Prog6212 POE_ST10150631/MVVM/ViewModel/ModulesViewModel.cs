@@ -3,14 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Dynamic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media.Effects;
 
 namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
-    public class ModulesViewModel
+    public class ModulesViewModel : INotifyPropertyChanged
     {
 
         private ObservableCollection<ModuleClass> _moduleData;
@@ -21,7 +25,8 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             set
             {
                 _moduleData = value;
-                OnPropertyChanged();
+
+                OnPropertyChanged(nameof(ModuleData));
             }
         }
 
@@ -51,7 +56,6 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             newModule.ModuleName = Name;
             newModule.ClassHrs = ClassWeeklyHrs;
             newModule.Credits = credits;
-            newModule.CompletedSelfHrs = 0;
             
             SemesterClass tempSemester = MainViewModel.WorkerClassHere.SearchSemester(SemesterName);
             newModule.Semester = tempSemester.Name;
@@ -64,13 +68,26 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 
 
         }
+        public void UpdateCompletedSelfHrs(string moduleName, double hrsStudied)
+        {
+            ModuleClass moduleToUpdate = ModuleData.FirstOrDefault(module => module.ModuleName == moduleName);
+
+            if (moduleToUpdate != null)
+            {
+                moduleToUpdate.CompletedSelfHrs += hrsStudied;
+                OnPropertyChanged(nameof(ModuleData));
+            }
+            
+        }
+
+
+
         /// <summary>
         /// Deletes Semesters from both the SemesterList and SemesterData
         /// </summary>
         /// <param name="SemesterName"></param>
-        public void DeleteModule(string SemesterName)
+        public void DeleteModule(string ModuleName)
         {
-
             OnPropertyChanged(nameof(ModuleData));
         }
     }

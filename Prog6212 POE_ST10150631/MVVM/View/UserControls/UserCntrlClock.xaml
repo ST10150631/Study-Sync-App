@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Prog6212_POE_ST10150631.MVVM.View.UserControls.UserCntrlClock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Prog6212_POE_ST10150631.MVVM.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="150">
+    
+    
+
+    <Grid Background="Transparent" Margin="0">
+        <Rectangle x:Name="TimerKnob" Margin="116,13,19,127" Width="15" Height="10" Stroke="{DynamicResource SecondaryBrush}" StrokeThickness="20"  Fill="{DynamicResource SecondaryBrush}" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="43.956"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Ellipse Width="25" Height="10" Stroke="{DynamicResource SecondaryBrush}" StrokeThickness="10" Fill="{DynamicResource PrimaryBrush}" Margin="120,7,5,133" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="41.634"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Height="150" Width="150" Stroke="{DynamicResource SecondaryBrush}" StrokeThickness="5" Fill="{DynamicResource PrimaryBrush}"/>
+        
+        <Line x:Name="hourHand" X1="75" Y1="75" X2="75" Y2="25" Stroke="{DynamicResource ForegroundBrush}" StrokeThickness="5"/>
+        <Line x:Name="minuteHand" X1="75" Y1="75" X2="75" Y2="10" Stroke="{DynamicResource TertiaryBrush}" StrokeThickness="3" RenderTransformOrigin="0.5,0.5"/>
+        <Line x:Name="secondHand" X1="75" Y1="75" X2="75" Y2="5" Stroke="{DynamicResource SecondaryBrush}" StrokeThickness="1" RenderTransformOrigin="0.5,0.5" >
+
+        </Line>
+        <Ellipse Width="10" Height="10" Stroke="{DynamicResource SecondaryBrush}" StrokeThickness="4"/>
+    </Grid>
+</UserControl>
