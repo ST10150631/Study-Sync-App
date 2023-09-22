@@ -22,12 +22,19 @@ namespace Prog6212_POE_ST10150631.Pages
     /// </summary>
     public partial class ModulesPg : Page
     {
+        /// <summary>
+        /// Holds the resource dictionary and source for the app
+        /// </summary>
         ResourceDictionary appStyles = new ResourceDictionary() { Source = new Uri("MVVM/View/Styles/AppStyle.xaml", UriKind.Relative) };
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public ModulesPg()
         {
             InitializeComponent();
             
-
+            //Assigning dataContexts
             DtaGrdModules.DataContext = MainViewModel.ModulesViewModel;
 
 
@@ -37,6 +44,15 @@ namespace Prog6212_POE_ST10150631.Pages
             DataContext = MainViewModel.ModulesViewModel;
 
         }
+        //======================================================= End of Method ===================================================
+
+
+        /// <summary>
+        /// Will ensure details are valid before adding Populating module data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>        
+        ///  ----------------------------------------------------- Start of Method ------------------------------------------------
 
         private void BtnAddModule_Click(object sender, RoutedEventArgs e)
         {
@@ -67,10 +83,8 @@ namespace Prog6212_POE_ST10150631.Pages
             }
 
         }
+        //======================================================= End of Method ===================================================
 
-        private void CmboBxFilterSemester_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
     }
 }

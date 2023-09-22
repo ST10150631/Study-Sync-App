@@ -77,7 +77,7 @@
                                 <DataGridTextColumn Header=" Start Date" Width="180" Binding="{Binding StartDate}" />
                                 <DataGridTextColumn Header=" End Date" Width="180" Binding="{Binding EndDate}"/>
                                 <DataGridTextColumn Header=" Number of weeks" Width="180" Binding="{Binding Weeks}"/>
-                                <DataGridTextColumn Header=" Number of Modules" Binding="{Binding NumModules}" Width="Auto"/>
+                                <DataGridTextColumn Header=" Number of Modules" Binding="{Binding NumModules}" Width="*"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
@@ -121,7 +121,7 @@
 
                     <!-- Add module Button -->
 
-                    <Border Background="{DynamicResource TertiaryBrush}" Grid.Row="5" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
+                    <Border Background="{DynamicResource PrimaryBrush}" Grid.Row="5" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button x:Name="BtnAddSemester"  Style="{DynamicResource btnPrimary}" Width="400" HorizontalAlignment="Center" Click="BtnAddSemester_Click">
                                 <StackPanel>
@@ -139,7 +139,7 @@
 
 
                     <!-- Delete A Module-->
-                    <Border Background="{DynamicResource  TertiaryBrush}" Grid.Row="6" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
+                    <Border Background="{DynamicResource  PrimaryBrush}" Grid.Row="6" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <StackPanel Orientation="Horizontal">
 
                             <StackPanel Orientation="Vertical" Width="200"  VerticalAlignment="Center">

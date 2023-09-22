@@ -53,8 +53,10 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
         public StudyPg()
         {
             InitializeComponent();
-            SelectSemester.DataContext = MainViewModel.SemestersViewModel;
+            CmboBxSelectSemester.DataContext = MainViewModel.SemestersViewModel;
             moduleItemsControl.DataContext = MainViewModel.ModulesViewModel;
+            moduleItemsControl.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
+
             CmboBxCustomAddHrs.DataContext = MainViewModel.ModulesViewModel;
             CmboBxSelectMod.DataContext = MainViewModel.ModulesViewModel;
 
@@ -129,7 +131,10 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
             {
                 MainViewModel.ModulesViewModel.UpdateCompletedSelfHrs(CmboBxSelectMod.Text, MinutesStudied / 60);
             }
+            moduleItemsControl.DataContext = MainViewModel.WorkerClassHere;
+            moduleItemsControl.ItemsSource = MainViewModel.WorkerClassHere.ModuleList;
             moduleItemsControl.DataContext = MainViewModel.ModulesViewModel;
+            moduleItemsControl.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
         }
 
         /// <summary>
@@ -143,7 +148,23 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
             {
                 MainViewModel.ModulesViewModel.UpdateCompletedSelfHrs(CmboBxCustomAddHrs.Text, Hours);
             }
+            moduleItemsControl.DataContext = MainViewModel.WorkerClassHere;
+            moduleItemsControl.ItemsSource = MainViewModel.WorkerClassHere.ModuleList;
             moduleItemsControl.DataContext = MainViewModel.ModulesViewModel;
+            moduleItemsControl.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
+        }
+
+
+
+
+        private void BtnSelectSemester_Click(object sender, RoutedEventArgs e)
+        {
+            if(CmboBxSelectSemester.Text != string.Empty)
+            {
+                TxtShowWeek.Text =  MainViewModel.StudyPgViewModel.CalculateCurrentWeek(CmboBxSelectSemester.Text);
+
+            }
+            
         }
 
 

@@ -71,7 +71,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         public void UpdateCompletedSelfHrs(string moduleName, double hrsStudied)
         {
             ModuleClass moduleToUpdate = ModuleData.FirstOrDefault(module => module.ModuleName == moduleName);
-
+            hrsStudied = Math.Round(hrsStudied,2);
             if (moduleToUpdate != null)
             {
                 moduleToUpdate.CompletedSelfHrs += hrsStudied;

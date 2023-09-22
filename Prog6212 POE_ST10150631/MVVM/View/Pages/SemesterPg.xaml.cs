@@ -13,6 +13,9 @@ namespace Prog6212_POE_ST10150631.Pages
     /// </summary>
     public partial class SemesterPg : Page
     {
+        /// <summary>
+        /// Holds the App style resource dictionary to be used to change textbox styles for incorrect input
+        /// </summary>
         ResourceDictionary appStyles = new ResourceDictionary() { Source = new Uri("MVVM/View/Styles/AppStyle.xaml", UriKind.Relative) };
         public SemesterPg()
         {
@@ -29,6 +32,7 @@ namespace Prog6212_POE_ST10150631.Pages
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         private void BtnAddSemester_Click(object sender, RoutedEventArgs e)
         {
             //To exclude the time from the date
@@ -60,11 +64,21 @@ namespace Prog6212_POE_ST10150631.Pages
                 TxtBxName.Style = (Style)appStyles["TxtBxInvalid"];
             }
         }
+        //======================================================= End of Method ===================================================
 
+        /// <summary>
+        /// Sends Module name to the Delete Semester method if btnDeleteClicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
 
             MainViewModel.SemestersViewModel.DeleteSemester( CmoboBxSemesters.Text);
         }
+        //======================================================= End of Method ===================================================
+
+
     }
 }

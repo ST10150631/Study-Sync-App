@@ -36,7 +36,7 @@
                                 
                                 
                                 <!-- Content Header-->
-            <Border Background="{DynamicResource  PrimaryBrush}" Grid.Row="2" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
+            <Border Background="{DynamicResource  TertiaryBrush}" Grid.Row="2" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <StackPanel Orientation="Horizontal">
 
                             <StackPanel Orientation="Vertical" Width="300"  VerticalAlignment="Center">
@@ -81,9 +81,9 @@
                                 <DataGridTextColumn Header=" Module Code" Width="150" Binding="{Binding ModuleName}"/>
                                 <DataGridTextColumn Header=" Module Name" Width="150" Binding="{Binding ModuleCode}"/>
                                 <DataGridTextColumn Header=" Module Credits" Width="150" Binding="{Binding Credits}"/>
-                                <DataGridTextColumn Header=" Module Weekly Class Hours" Width="150" Binding="{Binding ClassHrs}"/>
-                                <DataGridTextColumn Header=" Weekly self-study hours" Width="150" Binding="{Binding SelfStudyHrs}"/>
-                                <DataGridTextColumn Header=" Semester" Width="150" Binding="{Binding Semester}"/>
+                                <DataGridTextColumn Header=" Module Weekly Class Hours" Width="170" Binding="{Binding ClassHrs}"/>
+                                <DataGridTextColumn Header=" Weekly self-study hours" Width="160" Binding="{Binding SelfStudyHrs}"/>
+                                <DataGridTextColumn Header=" Semester" Width="*"  Binding="{Binding Semester}"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
@@ -94,7 +94,7 @@
                                 
                                 
                                 <!-- Add Modules-->
-                    <Border Background="{DynamicResource PrimaryBrush}" Grid.Row="4" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
+                    <Border Background="{DynamicResource TertiaryBrush}" Grid.Row="4" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <StackPanel Orientation="Horizontal">
                             <StackPanel>
                                 <TextBlock Text="Add New Module :" Style="{DynamicResource  TitlePrimary}"/>

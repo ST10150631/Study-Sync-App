@@ -126,6 +126,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             {
                 SelfStudyHrs = 0;
             }
+            SelfStudyHrs = Math.Round(SelfStudyHrs, 2);
             return SelfStudyHrs;
 
         }
