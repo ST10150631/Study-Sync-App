@@ -20,9 +20,9 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="60"/>
-                <RowDefinition Height="400"/>
-                        <RowDefinition Height="280"/>
+                <RowDefinition Height="280"/>
                         <RowDefinition Height="60"/>
+                        <RowDefinition Height="400"/>
                         <RowDefinition />
             </Grid.RowDefinitions>
             <!-- Title -->
@@ -64,7 +64,7 @@
 
 
                                 <!-- Data Grid -->
-                    <Border Background="{DynamicResource  PrimaryBrush}" Grid.Row="3" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
+                    <Border Background="{DynamicResource  PrimaryBrush}" Grid.Row="5" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <DataGrid x:Name="DtaGrdModules"  Style="{DynamicResource DataGrdPrimary}"  ItemsSource="{Binding ModuleData}" AutoGenerateColumns="False" IsReadOnly="True">
 
                             <!--<!Column Header-->
@@ -94,7 +94,7 @@
                                 
                                 
                                 <!-- Add Modules-->
-                    <Border Background="{DynamicResource TertiaryBrush}" Grid.Row="4" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
+                    <Border Background="{DynamicResource TertiaryBrush}" Grid.Row="3" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <StackPanel Orientation="Horizontal">
                             <StackPanel>
                                 <TextBlock Text="Add New Module :" Style="{DynamicResource  TitlePrimary}"/>
@@ -121,7 +121,7 @@
 
                     <!-- Add module Button -->
 
-                    <Border Background="{DynamicResource PrimaryBrush}" Grid.Row="5" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
+                    <Border Background="{DynamicResource PrimaryBrush}" Grid.Row="4" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button x:Name="BtnAddModule"  Style="{DynamicResource btnPrimary}" Width="400" HorizontalAlignment="Center" Click="BtnAddModule_Click">
                                 <StackPanel>
@@ -152,7 +152,7 @@
                             </StackPanel> 
                             
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="200" Margin="20,0,0,0" Height="30">
-                                <Button x:Name="BtnDelete"  Style="{DynamicResource btnPrimary}" Height="30" Background="#FFFF420E">
+                                <Button x:Name="BtnDelete"  Style="{DynamicResource btnPrimary}" Height="30" Background="#FFFF420E" Click="BtnDelete_Click">
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="Trash" Foreground="{DynamicResource PrimaryBrush}" Width="20"/>
                                         <TextBlock Text="Delete" Foreground="{DynamicResource PrimaryBrush}" FontSize="13" FontWeight="Bold" VerticalAlignment="Center" />

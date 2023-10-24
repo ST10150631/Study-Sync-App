@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Prog6212_POE_ST10150631.Pages"
       xmlns:fa ="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
       mc:Ignorable="d" 
-      d:DesignHeight="950" d:DesignWidth="900"
+      d:DesignHeight="780" d:DesignWidth="900"
       Title="SemesterPg" Margin="5" Background="Transparent">
     <Border CornerRadius="20,20,10,10" >
         <Grid>
@@ -17,7 +17,7 @@
                         <RowDefinition Height="60"/>
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="60"/>
-                        <RowDefinition Height="400"/>
+                        <RowDefinition Height="250"/>
                         <RowDefinition Height="230"/>
                         <RowDefinition Height="60"/>
                         <RowDefinition />
@@ -87,7 +87,7 @@
 
 
 
-                    <!-- Add Modules-->
+                    <!-- Add Semesters -->
                     <Border Background="{DynamicResource TertiaryBrush}" Grid.Row="4" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <StackPanel Orientation="Horizontal">
                             <StackPanel>
@@ -98,7 +98,7 @@
                             </StackPanel>
                             <StackPanel Width="400" Margin="40,0,0,0">
                                 <StackPanel>
-                                    <TextBox x:Name="TxtBxName" Style="{DynamicResource TxtBxPrimary}" Height="20" Margin="10,50,10,10"/>
+                                    <TextBox x:Name="TxtBxName" Style="{DynamicResource TxtBxPrimary}" Height="20" Margin="10,70,10,10"/>
                                 </StackPanel>
                                 
                                 <DatePicker x:Name="DatePickSartDate" Margin="10"  Background="{DynamicResource  PrimaryBrush}">
@@ -119,7 +119,7 @@
 
 
 
-                    <!-- Add module Button -->
+                    <!-- Add Semester Button -->
 
                     <Border Background="{DynamicResource PrimaryBrush}" Grid.Row="5" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -138,7 +138,7 @@
 
 
 
-                    <!-- Delete A Module-->
+                    <!-- Delete A Semester-->
                     <Border Background="{DynamicResource  PrimaryBrush}" Grid.Row="6" CornerRadius="10,10,10,10"  Margin="10" Opacity="0.9">
                         <StackPanel Orientation="Horizontal">
 

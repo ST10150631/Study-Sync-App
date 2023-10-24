@@ -56,25 +56,25 @@ namespace Prog6212_POE_ST10150631.Pages
 
         private void BtnAddModule_Click(object sender, RoutedEventArgs e)
         {
-            if (MainViewModel.ValidationClassHere.IsNewModule(TxtBxName,TxtBxCode) == false)
+            if (MainViewModel.ValidationClassHere.IsNewModule(TxtBxName,TxtBxCode) == false) // If the module has already been added
             {
                 MainViewModel.ValidationClassHere.ErrorMessage("Module Name must be unique and cannot be Empty.");
                 TxtBxCode.Style = (Style)appStyles["TxtBxInvalid"];
                 TxtBxName.Style = (Style)appStyles["TxtBxInvalid"];
             }
-            else if (MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxCredits)==false)
+            else if (MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxCredits)==false) // If the input is not a double or is nagative
             {
                 MainViewModel.ValidationClassHere.ErrorMessage("Module Credits must be a positive number.");
                 TxtBxCredits.Style = (Style)appStyles["TxtBxInvalid"];
             }
-            else if (MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxClassHrs)==false)
+            else if (MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxClassHrs)==false) // If the input is not a double or is nagative
             {
                 MainViewModel.ValidationClassHere.ErrorMessage("Module Class Hours must be a positive number.");
                 TxtBxClassHrs.Style = (Style)appStyles["TxtBxInvalid"];
             }
             else if (MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxClassHrs)==true && MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxCredits)==true && MainViewModel.ValidationClassHere.IsNewModule(TxtBxName, TxtBxCode)==true && string.IsNullOrEmpty(CmboBxSelectSemester.Text) == false)
             {
-
+                //Resets textbx styles and sends details to the moduleViewModel
                 MainViewModel.ModulesViewModel.PopulateModuleList(TxtBxName.Text, TxtBxCode.Text,double.Parse(TxtBxClassHrs.Text),double.Parse(TxtBxCredits.Text),CmboBxSelectSemester.Text);
                 TxtBxCode.Style = (Style)appStyles["TxtBxPrimary"];
                 TxtBxName.Style = (Style)appStyles["TxtBxPrimary"];
@@ -86,5 +86,20 @@ namespace Prog6212_POE_ST10150631.Pages
         //======================================================= End of Method ===================================================
 
 
+
+        /// <summary>
+        /// Sends the module to be deleteds name to the ModulesViewModule
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MainViewModel.ModulesViewModel.DeleteModule(CmoboBxModules.Text);
+        }
+        //======================================================= End of Method ===================================================
+
+
     }
 }
+//############################################################### END OF FILE ########################################################

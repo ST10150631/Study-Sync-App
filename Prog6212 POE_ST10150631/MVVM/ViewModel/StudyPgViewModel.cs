@@ -4,12 +4,24 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
     public class StudyPgViewModel
     {
-
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public StudyPgViewModel()
         {
 
         }
+        //======================================================= End of Method ===================================================
 
+
+        /// <summary>
+        /// Calculates a semsters current week if not when it starts or ends
+        /// if the semester is not currently happening
+        /// </summary>
+        /// <param name="semesterName"></param>
+        /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public string CalculateCurrentWeek(string semesterName)
         {
             var semester = MainViewModel.WorkerClassHere.SearchSemester(semesterName);
@@ -38,6 +50,10 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
                 return $"Completed on: {semester.EndDate.ToShortDateString()}";
             }
         }
+        //======================================================= End of Method ===================================================
+
+
 
     }
 }
+//############################################################### END OF FILE ########################################################

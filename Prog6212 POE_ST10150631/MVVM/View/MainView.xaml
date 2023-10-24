@@ -182,14 +182,14 @@
 
 
                         <!-- Music   radio Btn -->
-                        <RadioButton x:Name="RbtnMusic" Style="{DynamicResource menuButton}" Height="57"  Margin="20,0,0,0" Checked="RbtnMusic_Checked" >
+                        <!--<RadioButton x:Name="RbtnMusic" Style="{DynamicResource menuButton}" Height="57"  Margin="20,0,0,0" Checked="RbtnMusic_Checked" >
 
                             <StackPanel Orientation="Horizontal" >
                                 <fa:IconImage Icon="ItunesNote"  Style="{DynamicResource menuButtonIcon}"  Margin="0,0,10,0"/>
                                 <TextBlock Text="Music " Style="{DynamicResource menuButtonText}" />
 
                             </StackPanel>
-                        </RadioButton>
+                        </RadioButton>-->
 
 
                         <!-- Settings   radio Btn -->

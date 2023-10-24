@@ -134,13 +134,13 @@ namespace Prog6212_POE_ST10150631.MVVM.View
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Start of Method >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        private void RbtnMusic_Checked(object sender, RoutedEventArgs e)
-        {
-            MusicPg musicPg = new MusicPg();
-            ContentPane.Content= musicPg;
+        //private void RbtnMusic_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    MusicPg musicPg = new MusicPg();
+        //    ContentPane.Content= musicPg;
 
-            Grd.Style = (Style)FindResource("BackgroundHome");
-        }
+        //    Grd.Style = (Style)FindResource("BackgroundHome");
+        //}
         //------------------------------------------------------------------------ End of Method ------------------------------------------------------------------------------------------
 
 

@@ -41,11 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\ModuleClass.cs" />
-    <Compile Include="Model\MusicClass.cs" />
-    <Compile Include="Model\NotificationClass.cs" />
-    <Compile Include="Model\SemesterClass.cs" />
-    <Compile Include="Model\WorkerClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -111,6 +111,34 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
 
 
         /// <summary>
+        /// Adds a moduleclass object to the moduleList
+        /// </summary>
+        /// <param name="module"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        public void AddmoduleToList(ModuleClass module)
+        {
+            ModuleList.Add(module);
+        }
+        //======================================================= End of Method ===================================================
+
+
+        /// <summary>
+        /// Removes a module from the moduleList
+        /// </summary>
+        /// <param name="name"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        public void RemoveModule(string name)
+        {
+            if (SearchModules(name) != null)
+            {
+                ModuleList.Remove(SearchModules(name));
+            }
+        }
+        //======================================================= End of Method ===================================================
+
+
+
+        /// <summary>
         /// Calculates the number of weekly self study hours required by a module
         /// </summary>
         /// <param name="ClassHrs"></param>

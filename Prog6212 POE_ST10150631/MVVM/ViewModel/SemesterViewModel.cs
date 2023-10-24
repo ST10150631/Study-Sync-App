@@ -35,16 +35,25 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Invokes the event if the SemesterData is changed
+        /// </summary>
+        /// <param name="propertyName"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        //======================================================= End of Method ===================================================
+
+
         /// <summary>
         /// Creates a new semester object and adds it to the SemesterList & SemesterData
         /// </summary>
         /// <param name="Name"></param>
         /// <param name="StartDate"></param>
         /// <param name="Weeks"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public void PopulateSemesterList(string Name, DateTime StartDate,double Weeks )
         {
             SemesterClass NewSemester = new SemesterClass();
@@ -62,10 +71,14 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             OnPropertyChanged(nameof(SemesterData));
 
         }
+        //======================================================= End of Method ===================================================
+
+
         /// <summary>
         /// Deletes Semesters from both the SemesterList and SemesterData
         /// </summary>
         /// <param name="SemesterName"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public void DeleteSemester(string SemesterName)
         {
             MainViewModel.WorkerClassHere.RemoveSemester(SemesterName);
@@ -73,6 +86,8 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             SemesterData.Remove(SelectedSem);
             OnPropertyChanged(nameof(SemesterData));
         }
+        //======================================================= End of Method ===================================================
+
 
     }
 

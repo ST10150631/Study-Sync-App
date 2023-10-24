@@ -11,6 +11,12 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
     public class ValidationViewModel
     {
+        /// <summary>
+        /// Checks if textbox input is a positive double
+        /// </summary>
+        /// <param name="textBox"></param>
+        /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public bool IsPositiveDouble( TextBox textBox)
         {
             if (TxtBxNotBlank(textBox))
@@ -28,7 +34,14 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             } else return false;
             
         }
+        //======================================================= End of Method ===================================================
 
+        /// <summary>
+        /// Checks if a textbox is blank
+        /// </summary>
+        /// <param name="textBox"></param>
+        /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public bool TxtBxNotBlank(TextBox textBox)
         {
             if (!string.IsNullOrEmpty(textBox.Text))
@@ -37,12 +50,15 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             }
             return false;
         }
+        //======================================================= End of Method ===================================================
+
 
         /// <summary>
         /// Checks if a semester of that name already exsists
         /// </summary>
         /// <param name="TextBox"></param>
         /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public bool IsNewSemester(TextBox TextBox)
         {
            if(TxtBxNotBlank(TextBox))
@@ -56,7 +72,15 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             } 
            return false;
         }
+        //======================================================= End of Method ===================================================
 
+        /// <summary>
+        /// Checks if the name and code are unique
+        /// </summary>
+        /// <param name="TextBox"></param>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public bool IsNewModule(TextBox TextBox,TextBox code)
         {
             if (TxtBxNotBlank(TextBox))
@@ -71,10 +95,20 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             }
             return false;
         }
+        //======================================================= End of Method ===================================================
 
+
+        /// <summary>
+        /// Sends an Error Message
+        /// </summary>
+        /// <param name="message"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public void ErrorMessage(string message)
         {
             MessageBox.Show(message, "Input error", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
+        //======================================================= End of Method ===================================================
+
     }
 }
+//############################################################### END OF FILE ########################################################
