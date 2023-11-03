@@ -20,6 +20,7 @@
 
 
 
+![image](https://github.com/ST10150631/Study-Sync-App/assets/101188233/68c7275c-c8f6-4e0f-acc0-9c2cfd0a080e)
 
 
 ![image](https://github.com/ST10150631/Study-Sync-App/assets/101188233/c2c21406-0c1b-4dd4-987d-ad3b514ab483)
@@ -35,11 +36,12 @@
 The project should run if you have have all the requirements
 
 ## How to use and features:
-* Once Running you should be greeted with the Sign in or Sign up window this is for part 2 of the POE and can be igonred so just click Sign in 
+* Once Running you should be greeted with the Sign up window The user will have to make a username and password and fill in other relevant details once this is done the user can sign in again and agian using those details.
 * You will be navigated to the HomePage that looks like this
 
 
 
+![image](https://github.com/ST10150631/Study-Sync-App/assets/101188233/718308af-044c-408c-abbe-60bf5ff98e5c)
 
 
 ![Screenshot 2023-09-16 123331](https://github.com/ST10150631/Study-Sync-App/assets/101188233/a8bb9173-4613-4f57-81c9-f93baf99b83d)
@@ -199,7 +201,12 @@ The project should run if you have have all the requirements
 
 ![Screenshot 2023-09-22 121840](https://github.com/ST10150631/Study-Sync-App/assets/101188233/9322622d-5338-4786-b615-167378a7ae61)
 
-
+## Changes and Updates:
+* The app now has a database and user data will persist
+* Users can Sign up and Login
+* Modules and semesters will persist for multiple runs
+* User info will be displayed on the window
+* 
 
 
 
