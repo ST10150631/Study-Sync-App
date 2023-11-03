@@ -172,6 +172,13 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
             
         }
 
+        private void BtnNewWeek_Click(object sender, RoutedEventArgs e)
+        {
+            MainViewModel.ModulesViewModel.NewWeek();
+            moduleItemsControl.ItemsSource = MainViewModel.SemestersViewModel.SemesterData;
+            moduleItemsControl.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
+        }
+
 
 
         //======================================================= End of Method ===================================================

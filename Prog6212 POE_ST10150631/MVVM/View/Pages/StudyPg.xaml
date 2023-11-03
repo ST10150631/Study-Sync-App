@@ -170,7 +170,11 @@
                                     <Button x:Name="BtnAddTimerHrs" Content="Add Timer Value"  Style="{DynamicResource btnPrimary}" Height="30" Margin="10" Click="BtnAddTimerHrs_Click"/>
 
                                 </StackPanel>
-                            </Grid>
+                                    <StackPanel Grid.Row="5">
+                                   <Button x:Name="BtnNewWeek" Content="Start New Week"  Style="{DynamicResource btnPrimary}" Height="30" Margin="10" Click="BtnNewWeek_Click" />
+
+                                    </StackPanel>
+                                </Grid>
                         </Border>
                             
                             

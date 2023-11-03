@@ -85,6 +85,24 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         //======================================================= End of Method ===================================================
 
         /// <summary>
+        /// Resets studied hrs and week
+        /// </summary>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        public void NewWeek()
+        {
+            var user = MainViewModel.UserViewModel.LoggedInUser;
+            foreach(var module in ModuleData)
+            {
+                module.CompletedSelfHrs = 0;
+            }
+            model.ResetHrsStudied(user);
+            OnPropertyChanged(nameof(ModuleData));
+        }
+        //======================================================= End of Method ===================================================
+
+
+
+        /// <summary>
         /// Clears module Data for user
         /// </summary>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------

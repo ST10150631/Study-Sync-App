@@ -135,6 +135,30 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         }
         //======================================================= End of Method ===================================================
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="Week"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        public void ResetHrsStudied(string username)
+        {
+            double HrsStudied = 0;
+            string query = "UPDATE dbo.[Module] SET CompletedSelfHrs = @HrsStudied WHERE Username = @Username ;";
+            using (SqlConnection sqlConnect = new SqlConnection(ConnectionString))
+            {
+                sqlConnect.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, sqlConnect))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@HrsStudied", SqlDbType.Float)).Value = HrsStudied;
+                    cmd.Parameters.Add(new SqlParameter("@Username", SqlDbType.NVarChar)).Value = username;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        //======================================================= End of Method ===================================================
 
         /// <summary>
         /// Adds Self study Hours completed and the week completed
