@@ -42,6 +42,7 @@
                 <Grid x:Name="ToolBar" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
+                        <ColumnDefinition Width="400"/>
                         <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="25"/>
@@ -55,10 +56,15 @@
                     <Image Source="/Images/StudySync Logo.png" Margin="160,0,0,0"  HorizontalAlignment="Left"/>
 
 
+                    <!-- User Display-->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <fa:IconImage Icon="User" Foreground="{DynamicResource ForegroundBrush}" Margin="0"/>
+                        <TextBlock Margin="20,0" x:Name="TxtDisplayUsername" Style="{DynamicResource TxtSecondary}" />
+                    </StackPanel>
                     <!-- Minimize Button-->
                     <Button x:Name="BtnMinimize" 
             Background="#ff9900" 
-            Grid.Column="1"
+            Grid.Column="2"
             Style="{DynamicResource  RoundedWindowBtn}"
             Click="BtnMinimize_Click" FontSize="20"
             Margin="0,0,5,0"
@@ -70,7 +76,7 @@
                     <!-- Resize  Button-->
                     <Button x:Name="BtnResize" 
             Background="	#146eb4" 
-            Grid.Column="2"
+            Grid.Column="3"
             Style="{DynamicResource  RoundedWindowBtn}"
             Click="BtnResize_Click" FontSize="20"
             Margin="0,0,5,0"
@@ -82,7 +88,7 @@
                     <!-- Close Button-->
                     <Button x:Name="BtnClose" 
             Background="#FFFF420E" 
-            Grid.Column="3"
+            Grid.Column="4"
             Style="{DynamicResource  RoundedWindowBtn}"
             FontWeight="Bold"
              FontSize="16" Click="BtnClose_Click"
@@ -181,8 +187,8 @@
                         </RadioButton>
 
 
-                        <!-- Music   radio Btn -->
-                        <!--<RadioButton x:Name="RbtnMusic" Style="{DynamicResource menuButton}" Height="57"  Margin="20,0,0,0" Checked="RbtnMusic_Checked" >
+                         <!--Music   radio Btn--><!-- 
+                        <RadioButton x:Name="RbtnMusic" Style="{DynamicResource menuButton}" Height="57"  Margin="20,0,0,0" Checked="RbtnMusic_Checked" >
 
                             <StackPanel Orientation="Horizontal" >
                                 <fa:IconImage Icon="ItunesNote"  Style="{DynamicResource menuButtonIcon}"  Margin="0,0,10,0"/>

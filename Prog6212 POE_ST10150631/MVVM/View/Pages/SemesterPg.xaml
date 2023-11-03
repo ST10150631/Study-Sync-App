@@ -73,11 +73,10 @@
 
                             </DataGrid.Resources>
                             <DataGrid.Columns >
-                                <DataGridTextColumn Header=" Semester Name" Width="180"  Binding="{Binding Name}" />
-                                <DataGridTextColumn Header=" Start Date" Width="180" Binding="{Binding StartDate}" />
-                                <DataGridTextColumn Header=" End Date" Width="180" Binding="{Binding EndDate}"/>
-                                <DataGridTextColumn Header=" Number of weeks" Width="180" Binding="{Binding Weeks}"/>
-                                <DataGridTextColumn Header=" Number of Modules" Binding="{Binding NumModules}" Width="*"/>
+                                <DataGridTextColumn Header=" Semester Name" Width="200"  Binding="{Binding SemesterName}" />
+                                <DataGridTextColumn Header=" Start Date" Width="200" Binding="{Binding StartDate}" />
+                                <DataGridTextColumn Header=" End Date" Width="200" Binding="{Binding EndDate}"/>
+                                <DataGridTextColumn Header=" Number of weeks" Width="*"  Binding="{Binding Weeks}"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
@@ -148,7 +147,7 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" Width="300" VerticalAlignment="Center" >
-                                <ComboBox Template="{DynamicResource CmboBxTemplate}" x:Name="CmoboBxSemesters" ItemsSource="{Binding SemesterData}" DisplayMemberPath="Name" />
+                                <ComboBox Template="{DynamicResource CmboBxTemplate}" x:Name="CmoboBxSemesters" ItemsSource="{Binding SemesterData}" DisplayMemberPath="SemesterName" />
                             </StackPanel>
 
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="200" Margin="20,0,0,0" Height="30">

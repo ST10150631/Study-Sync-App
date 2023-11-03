@@ -46,6 +46,8 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
         /// </summary>
         private bool isTimerRunning = false;
 
+        private int CurrentWeek;
+
         /// <summary>
         /// Default Constructor
         /// </summary>
@@ -54,6 +56,7 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
         {
             InitializeComponent();
             CmboBxSelectSemester.DataContext = MainViewModel.SemestersViewModel;
+            moduleItemsControl.Items.Clear();    
             moduleItemsControl.DataContext = MainViewModel.ModulesViewModel;
             moduleItemsControl.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
 
@@ -72,6 +75,8 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
                 timer.Change(Timeout.Infinite, Timeout.Infinite);
                 isTimerRunning = false;
                 ClockTimer.Stop(); // Pause the animation if needed
+                MinutesStudied = 0;
+                SecondsStudied = 0;
             }
         }
 
@@ -123,18 +128,17 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
             {
 
             }
-            else if(MinutesStudied ==0)
+            else if (MinutesStudied == 0)
             {
-                
+
             }
             else
             {
-                MainViewModel.ModulesViewModel.UpdateCompletedSelfHrs(CmboBxSelectMod.Text, MinutesStudied / 60);
+                double hrs = MinutesStudied/60;
+                MainViewModel.ModulesViewModel.UpdateCompletedSelfHrs(CmboBxSelectMod.Text, hrs, CurrentWeek);
+                moduleItemsControl.ItemsSource = MainViewModel.SemestersViewModel.SemesterData;
+                moduleItemsControl.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
             }
-            moduleItemsControl.DataContext = MainViewModel.WorkerClassHere;
-            moduleItemsControl.ItemsSource = MainViewModel.WorkerClassHere.ModuleList;
-            moduleItemsControl.DataContext = MainViewModel.ModulesViewModel;
-            moduleItemsControl.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
         }
 
         /// <summary>
@@ -144,14 +148,16 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
         /// <param name="e"></param>
         private void BtnAddCustomHrs_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(HrsToAdd.Text, out double Hours))
+            if (double.TryParse(HrsToAdd.Text, out double Hours)&& CmboBxCustomAddHrs.Text != string.Empty)
             {
-                MainViewModel.ModulesViewModel.UpdateCompletedSelfHrs(CmboBxCustomAddHrs.Text, Hours);
+                MainViewModel.ModulesViewModel.UpdateCompletedSelfHrs(CmboBxCustomAddHrs.Text, Hours,CurrentWeek);
+                moduleItemsControl.ItemsSource = MainViewModel.SemestersViewModel.SemesterData;
+                moduleItemsControl.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
             }
-            moduleItemsControl.DataContext = MainViewModel.WorkerClassHere;
-            moduleItemsControl.ItemsSource = MainViewModel.WorkerClassHere.ModuleList;
-            moduleItemsControl.DataContext = MainViewModel.ModulesViewModel;
-            moduleItemsControl.ItemsSource = MainViewModel.ModulesViewModel.ModuleData;
+            else
+            {
+                MainViewModel.Validate.ErrorMessage("A module must be selected");
+            }
         }
 
 
@@ -162,7 +168,6 @@ namespace Prog6212_POE_ST10150631.MVVM.View.Pages
             if(CmboBxSelectSemester.Text != string.Empty)
             {
                 TxtShowWeek.Text =  MainViewModel.StudyPgViewModel.CalculateCurrentWeek(CmboBxSelectSemester.Text);
-
             }
             
         }

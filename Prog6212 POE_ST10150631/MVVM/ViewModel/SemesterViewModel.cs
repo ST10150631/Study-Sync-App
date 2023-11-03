@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-   using Prog6212_POE_ST10150631.MVVM.Model;
+using Prog6212_POE_ST10150631.MVVM.Model;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Windows.Input;
@@ -14,9 +14,10 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
     public class SemesterViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<SemesterClass> _semesterData;
+        private SemesterModel model = new SemesterModel();
+        private ObservableCollection<Semester> _semesterData;
 
-        public ObservableCollection<SemesterClass> SemesterData
+        public ObservableCollection<Semester> SemesterData
         {
             get { return _semesterData; }
             set
@@ -28,7 +29,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 
         public SemesterViewModel()
         {
-            _semesterData = new ObservableCollection<SemesterClass>();
+            _semesterData = new ObservableCollection<Semester>();
         }
         /// <summary>
         /// An event for when the semesterData is changed
@@ -48,28 +49,51 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 
 
         /// <summary>
-        /// Creates a new semester object and adds it to the SemesterList & SemesterData
+        /// Searches for a semester in the SemesterData using semesterName
         /// </summary>
         /// <param name="Name"></param>
-        /// <param name="StartDate"></param>
-        /// <param name="Weeks"></param>
+        /// <returns></returns>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
-        public void PopulateSemesterList(string Name, DateTime StartDate,double Weeks )
+        public Semester SearchSemester(string Name)
         {
-            SemesterClass NewSemester = new SemesterClass();
-            double temps = Weeks*7;
-            NewSemester.Name = Name;
-            NewSemester.Weeks = Weeks;
-            NewSemester.StartDate = StartDate.Date;
-            NewSemester.EndDate = StartDate.Date;
-            NewSemester.EndDate = NewSemester.EndDate.AddDays(temps).Date;
-            NewSemester.NumModules = 0;
-           
+                var foundSemester = SemesterData.FirstOrDefault(Sem => Sem.SemesterName == Name);
+            return foundSemester;
+        }
+        //======================================================= End of Method ===================================================
 
-            SemesterData.Add( NewSemester );
-            MainViewModel.WorkerClassHere.AddSemester( NewSemester );
+
+
+        /// <summary>
+        /// Adds a new semester to the database
+        /// </summary>
+        /// <param name="SemesterName"></param>
+        /// <param name="Weeks"></param>
+        /// <param name="StartDate"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        public void AddSemester(string SemesterName, double Weeks, DateTime StartDate)
+        {
+            var user = MainViewModel.UserViewModel.LoggedInUser;
+            var NewSem = model.AddNewSemester(SemesterName, Weeks, StartDate,user );
+            SemesterData.Add(NewSem);   
             OnPropertyChanged(nameof(SemesterData));
+        }
+        //======================================================= End of Method ===================================================
 
+        /// <summary>
+        /// Gets the data for the users semesters to be displayed in the datagrid
+        /// </summary>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        public void GetTableData()
+        {
+            List<Semester> tempData = new List<Semester>();
+            tempData = model.GetAllSemesters(MainViewModel.UserViewModel.LoggedInUser);
+            _semesterData.Clear();
+            foreach(var semester in tempData)
+            {
+                _semesterData.Add(semester);
+            }
+            SemesterData = _semesterData;
+             OnPropertyChanged(nameof(SemesterData));
         }
         //======================================================= End of Method ===================================================
 
@@ -81,9 +105,9 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public void DeleteSemester(string SemesterName)
         {
-            MainViewModel.WorkerClassHere.RemoveSemester(SemesterName);
-            SemesterClass SelectedSem = SemesterData.FirstOrDefault(semester => semester.Name == SemesterName);
-            SemesterData.Remove(SelectedSem);
+            var SelectedSem = SemesterData.FirstOrDefault(Sem => Sem.SemesterName == SemesterName);
+            model.DeleteSemester(SemesterName);
+            SemesterData.Remove(SelectedSem) ;
             OnPropertyChanged(nameof(SemesterData));
         }
         //======================================================= End of Method ===================================================

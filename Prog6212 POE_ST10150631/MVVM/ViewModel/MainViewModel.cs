@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
+    
     public static class MainViewModel
     {
+        public static NoteViewModel NoteViewModel = new NoteViewModel();    
 
-        public static WorkerClass WorkerClassHere { get; } = new WorkerClass();
+        public static ValidationModel Validate { get; } = new ValidationModel();
 
         public static SemesterViewModel SemestersViewModel { get; } = new SemesterViewModel();
 
-        public static ValidationViewModel ValidationClassHere { get; } = new ValidationViewModel();
-
         public static ModulesViewModel ModulesViewModel { get; } = new ModulesViewModel();
 
-        public static HomeViewModel HomeViewModelHere { get; } = new HomeViewModel(); 
-
         public static StudyPgViewModel StudyPgViewModel { get; } = new StudyPgViewModel();
+
+        public static UserViewModel UserViewModel { get; } = new UserViewModel();   
     }
 }

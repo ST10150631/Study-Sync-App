@@ -1,4 +1,5 @@
 ﻿using Prog6212_POE_ST10150631.MVVM.View.Pages;
+using Prog6212_POE_ST10150631.MVVM.ViewModel;
 using Prog6212_POE_ST10150631.Pages;
 using System.Windows;
 using System.Windows.Input;
@@ -17,6 +18,11 @@ namespace Prog6212_POE_ST10150631.MVVM.View
         public MainView()
         {
             InitializeComponent();
+            TxtDisplayUsername.Text = MainViewModel.UserViewModel.LoggedInUser;
+            MainViewModel.ModulesViewModel.ClearModuleData();
+            MainViewModel.SemestersViewModel.GetTableData();
+            MainViewModel.ModulesViewModel.GetModuleData();
+            MainViewModel.NoteViewModel.GetNoteData();
             HomePg homePg = new HomePg();
             ContentPane.Content = homePg;
         }
@@ -134,13 +140,13 @@ namespace Prog6212_POE_ST10150631.MVVM.View
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Start of Method >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        //private void RbtnMusic_Checked(object sender, RoutedEventArgs e)
-        //{
-        //    MusicPg musicPg = new MusicPg();
-        //    ContentPane.Content= musicPg;
+        private void RbtnMusic_Checked(object sender, RoutedEventArgs e)
+        {
+            MusicPg musicPg = new MusicPg();
+            ContentPane.Content = musicPg;
 
-        //    Grd.Style = (Style)FindResource("BackgroundHome");
-        //}
+            Grd.Style = (Style)FindResource("BackgroundHome");
+        }
         //------------------------------------------------------------------------ End of Method ------------------------------------------------------------------------------------------
 
 

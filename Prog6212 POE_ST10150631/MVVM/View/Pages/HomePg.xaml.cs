@@ -40,7 +40,7 @@ namespace Prog6212_POE_ST10150631.Pages
             InitializeComponent();
             DateNow.Text = DateTime.Now.ToString();
             CmboBxSelectModule.DataContext = MainViewModel.ModulesViewModel;
-            noteItemsControl.DataContext = MainViewModel.HomeViewModelHere;
+            noteItemsControl.DataContext = MainViewModel.NoteViewModel;
         }
         //======================================================= End of Method ===================================================
 
@@ -294,7 +294,7 @@ namespace Prog6212_POE_ST10150631.Pages
                 TimeSpan time = parsedTime.TimeOfDay;
                 DateTime.TryParse(DatePick.Text,out DateTime Date);
                 Date = Date.Add(time);
-                if(MainViewModel.ValidationClassHere.TxtBxNotBlank(TxtBxNoteName) )
+                if(MainViewModel.Validate.TxtBxNotBlank(TxtBxNoteName.Text) )
                 {
                     //Gets the Text Calue fromn the DateTime
                     TextRange textRange = new TextRange(TxtBxDetails.Document.ContentStart, TxtBxDetails.Document.ContentEnd);
@@ -305,7 +305,7 @@ namespace Prog6212_POE_ST10150631.Pages
                         SelectedMod = "None";
                     }
 
-                    MainViewModel.HomeViewModelHere.PopulateNoteList(TxtBxNoteName.Text, Date,details,SelectedMod);
+                    MainViewModel.NoteViewModel.AddNote(TxtBxNoteName.Text, Date,details,SelectedMod);
                 }
 
             }

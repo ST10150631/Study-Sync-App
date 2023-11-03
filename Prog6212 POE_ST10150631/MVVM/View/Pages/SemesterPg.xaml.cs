@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using Prog6212_POE_ST10150631.MVVM.Model;
@@ -17,6 +18,10 @@ namespace Prog6212_POE_ST10150631.Pages
         /// Holds the App style resource dictionary to be used to change textbox styles for incorrect input
         /// </summary>
         ResourceDictionary appStyles = new ResourceDictionary() { Source = new Uri("MVVM/View/Styles/AppStyle.xaml", UriKind.Relative) };
+        /// <summary>
+        /// Default Consytructor
+        /// </summary>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public SemesterPg()
         {
             InitializeComponent();
@@ -24,9 +29,11 @@ namespace Prog6212_POE_ST10150631.Pages
             DatePickSartDate.SelectedDate = DateTime.Today;
             DataContext = MainViewModel.SemestersViewModel;
             
+            
         }
+        //======================================================= End of Method ===================================================
 
-        
+
         /// <summary>
         /// Will call populate a new semesterClass object when Add semester button clicked
         /// </summary>
@@ -37,29 +44,28 @@ namespace Prog6212_POE_ST10150631.Pages
         {
             //To exclude the time from the date
             DateTime selectedDate = (DateTime)DatePickSartDate.SelectedDate.Value.Date;
-            if (MainViewModel.ValidationClassHere.IsNewSemester(TxtBxName))
+            if (MainViewModel.Validate.CheckIsNewSemester(TxtBxName.Text))
             {
-                if(MainViewModel.ValidationClassHere.IsPositiveDouble(TxtBxWeeks))
+                if(MainViewModel.Validate.IsPositiveDouble(TxtBxWeeks.Text))
                 {
+                    //Converts weeks to double
                     double weeks = Double.Parse(TxtBxWeeks.Text);
-                    MainViewModel.SemestersViewModel.PopulateSemesterList(TxtBxName.Text, selectedDate, weeks);
+                    MainViewModel.SemestersViewModel.AddSemester(TxtBxName.Text, weeks, selectedDate);
 
+                    //Resets the textbox styles back to normal
                     TxtBxWeeks.Style = (Style)appStyles["TxtBxPrimary"];
-
-
                     TxtBxName.Style = (Style)appStyles["TxtBxPrimary"];
-
                 }
                 else
                 {
-                    MainViewModel.ValidationClassHere.ErrorMessage("Invalid input for Number of Weeks. Weeks must be a positive number.");
+                    MainViewModel.Validate.ErrorMessage("Invalid input for Number of Weeks. Weeks must be a positive number.");
                     TxtBxWeeks.Style = (Style)appStyles["TxtBxInvalid"];
                 }
 
             }
             else
             {
-                MainViewModel.ValidationClassHere.ErrorMessage("Invalid input for Semester name. Name must be unique and cannot be blank.");
+                MainViewModel.Validate.ErrorMessage("Invalid input for Semester name. Name must be unique and cannot be blank.");
                 
                 TxtBxName.Style = (Style)appStyles["TxtBxInvalid"];
             }
@@ -76,6 +82,8 @@ namespace Prog6212_POE_ST10150631.Pages
         {
 
             MainViewModel.SemestersViewModel.DeleteSemester( CmoboBxSemesters.Text);
+            DataContext = MainViewModel.SemestersViewModel;
+            
         }
         //======================================================= End of Method ===================================================
 

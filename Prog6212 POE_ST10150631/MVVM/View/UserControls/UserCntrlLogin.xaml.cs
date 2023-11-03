@@ -1,18 +1,7 @@
 ﻿using Prog6212_POE_ST10150631.MVVM.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Prog6212_POE_ST10150631.MVVM.ViewModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Prog6212_POE_ST10150631.UserControls
 {
@@ -28,10 +17,22 @@ namespace Prog6212_POE_ST10150631.UserControls
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            MainView mainWindow = new MainView();
-            mainWindow.Show();
-            Window parentWindow = Window.GetWindow(this);
-            parentWindow.Close();
+            if (TxtBxUsername.Text.Trim().Length > 0 && TxtBxPW.Password.Length > 0)
+            {
+                if(MainViewModel.UserViewModel.TryLogin(TxtBxUsername.Text, TxtBxPW.Password))
+                {
+                    MainView mainWindow = new MainView();
+                mainWindow.Show();
+                Window parentWindow = Window.GetWindow(this);
+                parentWindow.Close();
+
+                }
+                else
+                {                
+                    MainViewModel.Validate.ErrorMessage("Incorrect Login values found. Try agian or create an account by signing up");
+                }
+            }
+
         }
     }
 }

@@ -27,20 +27,20 @@
             <!-- Username-->
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
-                    <TextBlock x:Name="TxtUserName" Text="Username: "  Style="{DynamicResource TxtSecondary}" Margin="20,10,15,5"/>
+                    <TextBlock Text="Username: "  Style="{DynamicResource TxtSecondary}" Margin="20,10,15,5"/>
                 </StackPanel>
                 <StackPanel>
-                    <TextBox x:Name="BoxUserName"  Margin="15,10,20,5" Width="200" Style="{DynamicResource TxtBxPrimary}"/>
+                    <TextBox x:Name="TxtBxUsername"  Margin="15,10,20,5" Width="200" Style="{DynamicResource TxtBxPrimary}"/>
                 </StackPanel>
 
             </StackPanel>
             <!-- Password -->
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
-                    <TextBlock x:Name="TxtPW" Text="Password: "  Style="{DynamicResource TxtSecondary}" Margin="20,10,15,5"/>
+                    <TextBlock  Text="Password: "  Style="{DynamicResource TxtSecondary}" Margin="20,10,15,5"/>
                 </StackPanel>
                 <StackPanel>
-                    <PasswordBox x:Name="BoxPW" Margin="20,10,20,5" Width="200" Style="{DynamicResource PwBxPrimary}"/>
+                    <PasswordBox x:Name="TxtBxPW" Margin="20,10,20,5" Width="200" Style="{DynamicResource PwBxPrimary}"/>
                 </StackPanel>
 
             </StackPanel>

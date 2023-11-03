@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8dc1a8f4bd004411bb7942cd6e4b4e8f" Name="Diagram1">
+        <EntityTypeShape EntityType="StudySyncDBModel.Module" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudySyncDBModel.Note" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudySyncDBModel.Semester" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudySyncDBModel.User" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="StudySyncDBModel.FK__Module__Semester__671F4F74" ManuallyRouted="false" />
+        <AssociationConnector Association="StudySyncDBModel.FK__Module__Username__662B2B3B" ManuallyRouted="false" />
+        <AssociationConnector Association="StudySyncDBModel.FK__Notes__Username__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="StudySyncDBModel.FK__Semester__Userna__681373AD" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

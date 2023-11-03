@@ -81,9 +81,9 @@
                                 <DataGridTextColumn Header=" Module Code" Width="150" Binding="{Binding ModuleName}"/>
                                 <DataGridTextColumn Header=" Module Name" Width="150" Binding="{Binding ModuleCode}"/>
                                 <DataGridTextColumn Header=" Module Credits" Width="150" Binding="{Binding Credits}"/>
-                                <DataGridTextColumn Header=" Module Weekly Class Hours" Width="170" Binding="{Binding ClassHrs}"/>
-                                <DataGridTextColumn Header=" Weekly self-study hours" Width="160" Binding="{Binding SelfStudyHrs}"/>
-                                <DataGridTextColumn Header=" Semester" Width="*"  Binding="{Binding Semester}"/>
+                                <DataGridTextColumn Header=" Module Weekly Class Hours" Width="170" Binding="{Binding WeeklyClassHrs}"/>
+                                <DataGridTextColumn Header=" Weekly self-study hours" Width="160" Binding="{Binding WeeklySelfHrs}"/>
+                                <DataGridTextColumn Header=" Semester" Width="*"  Binding="{Binding SemesterName}"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
@@ -109,7 +109,7 @@
                                 <TextBox x:Name="TxtBxName" Style="{DynamicResource TxtBxPrimary}" Height="20"  Margin="10"/>
                                 <TextBox x:Name="TxtBxCredits" Style="{DynamicResource TxtBxPrimary}" Height="20"  Margin="10"/>
                                 <TextBox x:Name="TxtBxClassHrs" Style="{DynamicResource TxtBxPrimary}" Height="20"  Margin="10,20,10,15"/>
-                                <ComboBox x:Name="CmboBxSelectSemester" Template="{DynamicResource CmboBxTemplate}" Height="20"  Margin="10,10"  DisplayMemberPath="Name"/>
+                                <ComboBox x:Name="CmboBxSelectSemester" Template="{DynamicResource CmboBxTemplate}" Height="20"  Margin="10,10"  DisplayMemberPath="SemesterName"/>
                             </StackPanel>
 
                         </StackPanel>

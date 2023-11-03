@@ -7,61 +7,83 @@
              xmlns:local="clr-namespace:Prog6212_POE_ST10150631.UserControls"
              mc:Ignorable="d" 
                         d:DesignHeight="500" Width="400">
-    <Grid>
-        <!-- Title Text -->
-        <StackPanel Background="{DynamicResource PrimaryBrush}">
-            <StackPanel Orientation="Horizontal" >
-                <TextBlock Style="{DynamicResource TitlePrimary}" Text="Sign Up:" VerticalAlignment="Center" Margin="150,0,0,0"/>
+    <!--*******************************************************************************-->
+    <!-- Outer Grid-->
+    <Grid Background="{DynamicResource PrimaryBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="110"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!-- Title & Icon-->
+        <StackPanel Orientation="Vertical">
+            <!-- Title Text -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  >
+                <TextBlock Style="{DynamicResource TitlePrimary}" Text="Sign Up:"/>
 
             </StackPanel>
             <!-- Icon -->
             <StackPanel Orientation="Horizontal">
-
-                <TextBlock  Width="100"  Margin="150,10,0,30">
-
+            <TextBlock  Width="100"  Margin="150,10,0,30">
                     <fa:IconImage Icon="UserGraduate" VerticalAlignment="Center"  Foreground="{DynamicResource ForegroundBrush}" Height="45" Width="99"/>
-                </TextBlock>
+            </TextBlock>
+        </StackPanel>
+        </StackPanel>
+        <!-- ************************************************************************-->
+        
+        
+        <!-- Inner Grid-->
+        <Grid Grid.Row="1">
+            <!-- Row Definitions-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
 
-
-            </StackPanel>
-
-            <!-- Name-->
-            <StackPanel Orientation="Horizontal">
-                <StackPanel>
-                    <TextBlock x:Name="TxtName" Text="Name:       "  Style="{DynamicResource TxtSecondary}" Margin="20,10,15,5"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="TxtBxName"  Margin="19,10,20,5" Width="200" Style="{DynamicResource TxtBxPrimary}"/>
-                </StackPanel>
-
-            </StackPanel>
+            </Grid.RowDefinitions>
+            <!-- ColumnDefinitions-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
             <!-- Username -->
-            <StackPanel Orientation="Horizontal">
-                <StackPanel>
-                    <TextBlock x:Name="TxtUsername" Text="Username: "  Style="{DynamicResource TxtSecondary}" Margin="15,10,15,5"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="TxtBxUsername" Margin="20,10,20,5" Width="200" Style="{DynamicResource TxtBxPrimary}"/>
-                </StackPanel>
+            <StackPanel  Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock x:Name="TxtUsername" Text="Username: "  Style="{DynamicResource TxtSecondary}" Margin="15,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBox x:Name="TxtBxUsername"  Width="200" Style="{DynamicResource TxtBxPrimary}"/>
+            </StackPanel>
+            <!-- Name-->
+            <StackPanel  Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock  Text="Name:       "  Style="{DynamicResource TxtSecondary}" Margin="20,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBox x:Name="TxtBxName" Width="200" Style="{DynamicResource TxtBxPrimary}"/>
+            </StackPanel>
+            <!-- Surname-->
+            <StackPanel  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Surname:       "  Style="{DynamicResource TxtSecondary}" Margin="20,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBox x:Name="TxtBxSurname"  Width="200" Style="{DynamicResource TxtBxPrimary}"/>
             </StackPanel>
             <!-- Password -->
-            <StackPanel Orientation="Horizontal">
-                <StackPanel>
-                    <TextBlock x:Name="TxtPW" Text="Password: "  Style="{DynamicResource TxtSecondary}" Margin="20,10,15,5"/>
+            <StackPanel Grid.Row="3"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Password: "  Style="{DynamicResource TxtSecondary}" Margin="20,0"/>
                 </StackPanel>
-                <StackPanel>
-                    <PasswordBox x:Name="BoxPW" Margin="20,10,20,5" Width="200" Style="{DynamicResource PwBxPrimary}"/>
-                </StackPanel>
-
-                <!-- Button-->
-               
-
+            <StackPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <PasswordBox x:Name="TxtBxPassword"  Width="200" Style="{DynamicResource PwBxPrimary}"/>
             </StackPanel>
-                <StackPanel Height="60" Orientation="Horizontal">
-                <Button x:Name="BtnSignUp" Content="Sign Up" Style="{DynamicResource btnPrimary}" Height="20" Width="200" Margin="100,30,15,5" Click="BtnSignUp_Click"/>
-                </StackPanel>
-            </StackPanel>
-
+        </Grid>
+        <!-- End Of Inner Grid-->    
+            <!-- Button-->
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+        <Button x:Name="BtnSignUp" Content="Sign Up" Style="{DynamicResource btnPrimary}" Height="30" Width="200"  Click="BtnSignUp_Click"/>
+    </StackPanel>
     </Grid>
+
+    <!-- End Of Outer Grid-->
 </UserControl>
 

@@ -1,6 +1,4 @@
-﻿using Prog6212_POE_ST10150631.MVVM.Model;
-using ST10150631_PROG_6212_POE_ClassLibrary.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -8,22 +6,24 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Prog6212_POE_ST10150631.MVVM.Model;
 
 namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
-    public class HomeViewModel
+    public class NoteViewModel
     {
         /// <summary>
         /// Holds the notification data as an observable collection
         /// </summary>
-        private ObservableCollection<NotificationClass> _noteData;
+        private ObservableCollection<Note> _noteData;
 
+        private NoteModel model = new NoteModel();
 
         /// <summary>
         /// Gets and sets the noteData when NoteList is changed
         /// </summary>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
-        public ObservableCollection<NotificationClass> NoteData
+        public ObservableCollection<Note> NoteData
         {
             get { return _noteData; }
             set
@@ -35,24 +35,22 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         //======================================================= End of Method ===================================================
 
 
-
-
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        /// ----------------------------------------------------- Start of Method ------------------------------------------------
-        public HomeViewModel()
-        {
-            _noteData = new ObservableCollection<NotificationClass>();
-        }
-        //======================================================= End of Method ===================================================
-
-
-
         /// <summary>
         /// An event for when the noteData is changed
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+
+        /// <summary>
+        /// default constructor
+        /// </summary>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        public NoteViewModel()
+        {
+            _noteData = new ObservableCollection<Note>();
+        }
+        //======================================================= End of Method ===================================================
+
 
 
         /// <summary>
@@ -68,46 +66,40 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 
 
         /// <summary>
-        /// Creates adds user input to notesData and noteList
+        /// Adds new note to observable collection and database
         /// </summary>
-        /// <param name="Name"></param>
-        /// <param name="StartDate"></param>
-        /// <param name="Weeks"></param>
+        /// <param name="NoteName"></param>
+        /// <param name="date"></param>
+        /// <param name="Description"></param>
+        /// <param name="moduleName"></param>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
-        public void PopulateNoteList(string NoteName, DateTime date, string Description ,string moduleName)
+        public void AddNote(string NoteName, DateTime date, string Description, string moduleName)
         {
-            NotificationClass newNote = new NotificationClass();
-            newNote.NoteName = NoteName;
-            newNote.NoteDate = date;
-            newNote.NoteDescription = Description;
-            newNote.module = moduleName;
-            MainViewModel.WorkerClassHere.NotificationList.Add(newNote);
-            NoteData.Add(newNote);
-           
-
-
-
+            var user = MainViewModel.UserViewModel.LoggedInUser;
+            var NewNote = model.AddNewNote(NoteName,date,Description,moduleName, user);
+            NoteData.Add(NewNote);
             OnPropertyChanged(nameof(NoteData));
-
-
         }
         //======================================================= End of Method ===================================================
 
 
         /// <summary>
-        /// Deletes Semesters from both the SemesterList and SemesterData
+        /// Gets the data to be displayed in the datagrid and comboboxes
         /// </summary>
-        /// <param name="SemesterName"></param>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
-        public void DeleteNote(string NoteName)
+        public void GetNoteData()
         {
-
+            List<Note> notes = new List<Note>();
+            notes = model.GetAllNotes(MainViewModel.UserViewModel.LoggedInUser);
+            foreach (var note in notes)
+            {
+                NoteData.Add(note);
+            }
             OnPropertyChanged(nameof(NoteData));
-        }        
+        }
         //======================================================= End of Method ===================================================
 
 
-    }
-//############################################################### END OF FILE ########################################################
 
+    }
 }
