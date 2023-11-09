@@ -1,11 +1,10 @@
 ﻿using Prog6212_POE_ST10150631.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Configuration;
 
 namespace Prog6212_POE_ST10150631.MVVM.Model
 {

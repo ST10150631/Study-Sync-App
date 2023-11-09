@@ -105,13 +105,7 @@
                     </Button>
                 </StackPanel>
                 <!-- Stop Btn-->
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0">
-                    <Button x:Name="BtnStop" Style="{DynamicResource btnMusic}" Height="60" Width="60" Click="BtnStop_Click" >
-                        <StackPanel>
-                            <fa:IconImage Icon="Stop" Foreground="{DynamicResource ForegroundBrush}" Width="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0"/>
 
                 <!-- Pause Btn-->
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0">

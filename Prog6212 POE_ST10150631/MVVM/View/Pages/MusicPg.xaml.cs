@@ -8,17 +8,23 @@ using System.IO;
 using System.Linq;
 using System.Windows.Input;
 using Prog6212_POE_ST10150631;
+using Prog6212_POE_ST10150631.MVVM.ViewModel;
 
 namespace Prog6212_POE_ST10150631.Pages
 {
     public partial class MusicPg : Page
     {
         /// <summary>
-        /// Media Player
+        /// Holds the paths to all the songs
         /// </summary>
-        private MediaPlayer MusicPlayer;
         private List<string> SongList = new List<string>();
+        /// <summary>
+        /// Holds the song names 
+        /// </summary>
         private List<string> SongNames = new List<string>();    
+        /// <summary>
+        /// Holds the index of the current song in the list
+        /// </summary>
         private int CurrentSong;
         /// <summary>
         /// Default constructor
@@ -26,11 +32,12 @@ namespace Prog6212_POE_ST10150631.Pages
         public MusicPg()
         {
             InitializeComponent();
-            MusicPlayer = new MediaPlayer();
             LoadSongs();    
         }
 
-
+        /// <summary>
+        /// Loads the default songs 
+        /// </summary>
         private void LoadSongs()
         {
             string songsFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MusicFiles");
@@ -102,14 +109,14 @@ namespace Prog6212_POE_ST10150631.Pages
 
         private void BtnStop_Click(object sender, RoutedEventArgs e)
         {
-            MusicPlayer.Stop();
+            MainViewModel.MusicPlayer.Stop();
             CurrentSong = 0;
             txtSongTitle.Text = SongNames[CurrentSong];
         }
 
         private void BtnPause_Click(object sender, RoutedEventArgs e)
         {
-            MusicPlayer.Pause();
+            MainViewModel.MusicPlayer.Pause();
         }
         /// <summary>
         /// Executes when the  skip button is pressed
@@ -161,8 +168,8 @@ namespace Prog6212_POE_ST10150631.Pages
             if (SongList.Count > 0)
             {
                 string currentSongPath = SongList[CurrentSong];
-                MusicPlayer.Open(new Uri(currentSongPath));
-                MusicPlayer.Play();
+                MainViewModel.MusicPlayer.Open(new Uri(currentSongPath));
+                MainViewModel.MusicPlayer.Play();
             }
         }
     }

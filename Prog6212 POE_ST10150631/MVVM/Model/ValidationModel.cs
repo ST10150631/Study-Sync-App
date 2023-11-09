@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Prog6212_POE_ST10150631.MVVM.Model
 {
@@ -25,7 +20,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public ValidationModel()
         {
-            
+
         }
         //======================================================= End of Method ===================================================
 
@@ -51,7 +46,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         public bool CheckIsNewSemester(string semestername)
         {
             return SemesterClass.IsNewSemester(semestername);
-        }        
+        }
         //======================================================= End of Method ===================================================
 
 

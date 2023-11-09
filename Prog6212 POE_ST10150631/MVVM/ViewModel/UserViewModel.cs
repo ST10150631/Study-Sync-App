@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Prog6212_POE_ST10150631.MVVM.Model;
+﻿using Prog6212_POE_ST10150631.MVVM.Model;
 
 namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
@@ -15,7 +10,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 
         public UserViewModel()
         {
-            
+
         }
 
         /// <summary>
@@ -27,7 +22,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         /// <param name="password"></param>
         /// <returns></returns>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
-        public bool TryRegister(string username, string name, string surname,  string password )
+        public bool TryRegister(string username, string name, string surname, string password)
         {
             if (model.RegisterUser(username, name, surname, password))
             {
@@ -51,7 +46,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public bool TryLogin(string username, string password)
         {
-            if(model.LoginUser(username, password) == true)
+            if (model.LoginUser(username, password) == true)
             {
                 LoggedInUser = username;
 

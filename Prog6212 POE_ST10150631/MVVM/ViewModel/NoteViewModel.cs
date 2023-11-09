@@ -1,12 +1,9 @@
-﻿using System;
+﻿using Prog6212_POE_ST10150631.MVVM.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using Prog6212_POE_ST10150631.MVVM.Model;
 
 namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
@@ -76,7 +73,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         public void AddNote(string NoteName, DateTime date, string Description, string moduleName)
         {
             var user = MainViewModel.UserViewModel.LoggedInUser;
-            var NewNote = model.AddNewNote(NoteName,date,Description,moduleName, user);
+            var NewNote = model.AddNewNote(NoteName, date, Description, moduleName, user);
             NoteData.Add(NewNote);
             OnPropertyChanged(nameof(NoteData));
         }

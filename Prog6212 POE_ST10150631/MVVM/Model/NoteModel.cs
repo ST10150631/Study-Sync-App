@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Prog6212_POE_ST10150631.MVVM.Model
 {
@@ -21,7 +18,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public NoteModel()
         {
-            
+
         }
         //======================================================= End of Method ===================================================
 
@@ -58,9 +55,9 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         /// <param name="username"></param>
         /// <returns></returns>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
-        public Note AddNewNote(string NoteName, DateTime date, string Description, string moduleName,string username)
+        public Note AddNewNote(string NoteName, DateTime date, string Description, string moduleName, string username)
         {
-            
+
             // Query for inserting data into the database
             string Query = "INSERT INTO dbo.[Notes] (NoteName, NoteContent, Module, NoteDate, Username) VALUES (@NoteName, @Description, @moduleName,@date, @username)";
 
@@ -70,7 +67,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
                 command.Parameters.AddWithValue("@NoteName", NoteName);
                 command.Parameters.AddWithValue("@Description", Description);
                 command.Parameters.AddWithValue("@moduleName", moduleName);
-                command.Parameters.AddWithValue ("@username", username);
+                command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@date", date);
 
                 // Opens the SQL connection
@@ -83,7 +80,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             // Create a new Semester object (you may need to adjust this part to match your entity)
             var newNote = new Note();
             newNote.NoteName = NoteName;
-            newNote.NoteContent = Description; 
+            newNote.NoteContent = Description;
             newNote.NoteDate = date;
             newNote.Username = username;
             newNote.Module = moduleName;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
@@ -22,5 +23,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         public static StudyPgViewModel StudyPgViewModel { get; } = new StudyPgViewModel();
 
         public static UserViewModel UserViewModel { get; } = new UserViewModel();   
+
+        public static MediaPlayer MusicPlayer { get; } = new MediaPlayer();
     }
 }

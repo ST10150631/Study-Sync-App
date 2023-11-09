@@ -1,11 +1,9 @@
-﻿using Microsoft.SqlServer.Server;
-using Prog6212_POE_ST10150631.MVVM.ViewModel;
+﻿using Prog6212_POE_ST10150631.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Threading;
 using System.Windows;
 
 namespace Prog6212_POE_ST10150631.MVVM.Model
@@ -185,7 +183,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         /// Deletes a semsester from the database
         /// </summary>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
-        public void DeleteSemester(string SemName)
+        public bool DeleteSemester(string SemName)
         {
             try
             {
@@ -198,11 +196,14 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
                     SqlCommand cmnd = new SqlCommand(query, SQLconnect);
                     cmnd.ExecuteNonQuery();
                 }
+                return true;
 
             }
             catch
             {
+
                 MessageBox.Show("Delete all a semesters modules before deleting a semester .");
+                return false;
             }
 
 

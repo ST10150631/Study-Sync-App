@@ -1,17 +1,10 @@
-﻿using System;
+﻿using Prog6212_POE_ST10150631.MVVM.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Prog6212_POE_ST10150631.MVVM.Model;
-    using System.Collections.ObjectModel;
-    using System.ComponentModel;
-    using System.Windows.Input;
-using System.Windows.Media.Media3D;
 using System.Runtime.CompilerServices;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Data;
 using System.Threading;
 
 namespace Prog6212_POE_ST10150631.MVVM.ViewModel
@@ -134,9 +127,14 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         public void DeleteSemester(string SemesterName)
         {
             var SelectedSem = SemesterData.FirstOrDefault(Sem => Sem.SemesterName == SemesterName);
-            model.DeleteSemester(SemesterName);
-            SemesterData.Remove(SelectedSem);
-            OnPropertyChanged(nameof(SemesterData));
+            bool isChanged = model.DeleteSemester(SemesterName);
+            if (isChanged)
+            {
+                SemesterData.Remove(SelectedSem);
+                OnPropertyChanged(nameof(SemesterData));
+
+            }
+
         }
         //======================================================= End of Method ===================================================
 
