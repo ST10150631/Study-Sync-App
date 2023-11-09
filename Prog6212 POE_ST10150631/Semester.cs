@@ -20,6 +20,7 @@ namespace Prog6212_POE_ST10150631
             this.Modules = new HashSet<Module>();
         }
     
+        public int SemesterID { get; set; }
         public string SemesterName { get; set; }
         public double Weeks { get; set; }
         public System.DateTime StartDate { get; set; }

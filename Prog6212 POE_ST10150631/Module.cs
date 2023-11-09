@@ -22,6 +22,7 @@ namespace Prog6212_POE_ST10150631
         public Nullable<double> CompletedSelfHrs { get; set; }
         public Nullable<int> WeekWhenAdded { get; set; }
         public double Credits { get; set; }
+        public int SemesterID { get; set; }
         public string SemesterName { get; set; }
         public string Username { get; set; }
     

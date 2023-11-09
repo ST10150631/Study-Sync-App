@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading;
+using System.Windows;
 
 namespace Prog6212_POE_ST10150631.MVVM.Model
 {
@@ -60,6 +61,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             //Query for inserting data into the database 
             string Query = "INSERT INTO dbo.[Semester] (SemesterName, Weeks, StartDate, EndDate, Username ) VALUES (@SemesterName,@Weeks,@StartDate,@EndDate,@Username);";
 
+            var newSem = new Semester();
             DateTime EndDate = CalculateEndDate(StartDate, Weeks);
 
             //Opens and closses the SQL connection
@@ -76,29 +78,62 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
                 //Execute the connection
                 command.ExecuteNonQuery();
 
-                SQLconnect.Close(); 
-
 
             }
-            
-            
-            var newSem = new Semester();
+            newSem.SemesterID = SearchID(SemName);
             newSem.SemesterName = SemName;
             newSem.StartDate = StartDate;
             newSem.EndDate = EndDate;
             newSem.Username = username;
             newSem.Weeks = ((int)Weeks);
+
             // Assuming you have your DbContext set up
             using (var dbContext = new StudySyncDBEntities())
             {
                 dbContext.Semesters.Add(newSem);
                 dbContext.SaveChangesAsync();
+
             }
-            
             return newSem;
+
 
         }
         //======================================================= End of Method ===================================================
+
+        /// <summary>
+        /// Searches for a semester in the database using SemesterName and returns semester ID
+        /// </summary>
+        /// <param name="SemesterName"></param>
+        /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        public int SearchID(string SemName)
+        {
+            string username = MainViewModel.UserViewModel.LoggedInUser;
+            string query = $"SELECT SemesterID FROM dbo.[Semester] WHERE SemesterName = '{SemName}' AND Username = '{username}';";
+            int ID = 0;
+            using (SqlConnection connect = new SqlConnection(ConnectionString))
+            {
+                connect.Open();
+                SqlCommand command = new SqlCommand(query, connect);
+
+                // Use parameters to avoid SQL injection
+                command.Parameters.AddWithValue("@SemName", SemName);
+                command.Parameters.AddWithValue("@username", username);
+
+                // Execute the query and retrieve the result
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Get the value of SemesterID from the result
+                    ID = reader.GetInt32(0);
+                }
+            }
+            return ID;
+        }
+        //======================================================= End of Method ===================================================
+
+
 
 
         /// <summary>
@@ -152,16 +187,24 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public void DeleteSemester(string SemName)
         {
-
-            string username = MainViewModel.UserViewModel.LoggedInUser;
-            //Query to delete semester from database using username and semesterName
-            string query = $"DELETE FROM dbo.[Semester] WHERE Username = '{username}' AND SemesterName = '{SemName}';";
-            using (SqlConnection SQLconnect = new SqlConnection(ConnectionString))
+            try
             {
-                SQLconnect.Open();
-                SqlCommand cmnd = new SqlCommand(query, SQLconnect);
-                cmnd.ExecuteNonQuery();
+                string username = MainViewModel.UserViewModel.LoggedInUser;
+                //Query to delete semester from database using username and semesterName
+                string query = $"DELETE FROM dbo.[Semester] WHERE Username = '{username}' AND SemesterName = '{SemName}';";
+                using (SqlConnection SQLconnect = new SqlConnection(ConnectionString))
+                {
+                    SQLconnect.Open();
+                    SqlCommand cmnd = new SqlCommand(query, SQLconnect);
+                    cmnd.ExecuteNonQuery();
+                }
+
             }
+            catch
+            {
+                MessageBox.Show("Delete all a semesters modules before deleting a semester .");
+            }
+
 
         }
         //======================================================= End of Method ===================================================

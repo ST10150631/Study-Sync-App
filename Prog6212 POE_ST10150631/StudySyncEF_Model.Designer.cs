@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\micha\source\repos\Prog6212 POE_ST10150631\Prog6212 POE_ST10150631\StudySyncEF_Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\micha\Downloads\PROG6212 POE PART 2 , MICHAEL TURNER ST10150631\Prog6212 POE_ST10150631\Prog6212 POE_ST10150631\StudySyncEF_Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

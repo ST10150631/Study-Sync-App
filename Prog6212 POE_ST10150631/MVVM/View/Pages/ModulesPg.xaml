@@ -78,8 +78,8 @@
 
                             </DataGrid.Resources>
                             <DataGrid.Columns >
-                                <DataGridTextColumn Header=" Module Code" Width="150" Binding="{Binding ModuleName}"/>
-                                <DataGridTextColumn Header=" Module Name" Width="150" Binding="{Binding ModuleCode}"/>
+                                <DataGridTextColumn Header=" Module Code" Width="150" Binding="{Binding ModuleCode}"/>
+                                <DataGridTextColumn Header=" Module Name" Width="150" Binding="{Binding ModuleName}"/>
                                 <DataGridTextColumn Header=" Module Credits" Width="150" Binding="{Binding Credits}"/>
                                 <DataGridTextColumn Header=" Module Weekly Class Hours" Width="170" Binding="{Binding WeeklyClassHrs}"/>
                                 <DataGridTextColumn Header=" Weekly self-study hours" Width="160" Binding="{Binding WeeklySelfHrs}"/>

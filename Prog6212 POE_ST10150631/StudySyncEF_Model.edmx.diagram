@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8dc1a8f4bd004411bb7942cd6e4b4e8f" Name="Diagram1">
-        <EntityTypeShape EntityType="StudySyncDBModel.Module" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudySyncDBModel.Note" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudySyncDBModel.Semester" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudySyncDBModel.User" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <AssociationConnector Association="StudySyncDBModel.FK__Module__Semester__671F4F74" ManuallyRouted="false" />
-        <AssociationConnector Association="StudySyncDBModel.FK__Module__Username__662B2B3B" ManuallyRouted="false" />
+      <Diagram DiagramId="ac1f426849204863be152bc82a918ee4" Name="Diagram1">
+        <EntityTypeShape EntityType="StudySyncDBModel.Module" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudySyncDBModel.Note" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudySyncDBModel.Semester" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudySyncDBModel.User" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="StudySyncDBModel.FK__Module__Semester__7849DB76" ManuallyRouted="false" />
+        <AssociationConnector Association="StudySyncDBModel.FK__Module__Username__7755B73D" ManuallyRouted="false" />
         <AssociationConnector Association="StudySyncDBModel.FK__Notes__Username__4F47C5E3" ManuallyRouted="false" />
-        <AssociationConnector Association="StudySyncDBModel.FK__Semester__Userna__681373AD" ManuallyRouted="false" />
+        <AssociationConnector Association="StudySyncDBModel.FK__Semester__Userna__793DFFAF" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

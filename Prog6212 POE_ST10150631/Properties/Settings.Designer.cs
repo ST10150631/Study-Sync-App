@@ -33,5 +33,27 @@ namespace Prog6212_POE_ST10150631.Properties {
                 return ((string)(this["StudySyncDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\StudySyncDB.m" +
+            "df;Integrated Security=True")]
+        public string StudySyncDBConnectionString1 {
+            get {
+                return ((string)(this["StudySyncDBConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\bin\\Debug\\Stu" +
+            "dySyncDB.mdf\";Integrated Security=True")]
+        public string DebugConnectString {
+            get {
+                return ((string)(this["DebugConnectString"]));
+            }
+        }
     }
 }

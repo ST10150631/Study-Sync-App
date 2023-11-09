@@ -186,7 +186,6 @@ The project should run if you have have all the requirements
 
 * The Study Page allows the user to time study sessions and add them to a semster using the timer and slecting a module to add the time to or by adding a custom value of time in hours
 * The progress for the weekly Time will be added on the left
-* As the apps Data is currently stored in memmory So all modules will be displayed however in part 2 A feature will be added where the user can filter by semester
 
 
 
@@ -206,7 +205,7 @@ The project should run if you have have all the requirements
 * Users can Sign up and Login
 * Modules and semesters will persist for multiple runs
 * User info will be displayed on the window
-* 
+* User can reset the hours studied for each week using the reset week button
 
 
 

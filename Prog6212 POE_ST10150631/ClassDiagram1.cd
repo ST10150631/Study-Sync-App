@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Prog6212_POE_ST10150631.App">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet">
+    <Position X="5.25" Y="7.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.NotesRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.SemesterDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.NotesDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.UserRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.ModuleDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.UserRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.ModuleRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.ModuleRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Delegate Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.SemesterRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Delegate Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.NotesRowChangeEventHandler" Collapsed="true">
+        <TypeIdentifier />
+      </Delegate>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.SemesterRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.NotesRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.UserDataTable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.UserRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.SemesterRowChangeEvent" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSet.ModuleRow" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AABhAAAQQwAAAAJAJCAIQAQAABgCQBwBAAQACAUABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.StudySyncDBEntities" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACAAAAAAAAAAIAAAAAAQEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StudySyncEF_Model.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Module">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gABBQAAAAAAAIAAAISAAAAAAAAAAAAAKAAAAAQAAABA=</HashCode>
+      <FileName>Module.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Note">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAACAAAgAAAAAAQAAAAAAACAAAAAAAAAACAAAAAE=</HashCode>
+      <FileName>Note.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Semester" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAASAAAAAwAAAAAAAAAAAAAEAAAAE=</HashCode>
+      <FileName>Semester.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.User">
+    <Position X="13.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgAEAAAAAAAAAAIQAAAAAQBAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.Model.ModuleModel">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAACACAAAAAQAAAAAAACAACAAAAAg=</HashCode>
+      <FileName>MVVM\Model\ModuleModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.Model.NoteModel">
+    <Position X="13.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAACAAAAAAAAA=</HashCode>
+      <FileName>MVVM\Model\NoteModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.Model.SemesterModel" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAQAAAAAAAAAAAAAAAAACACAAACAABAA=</HashCode>
+      <FileName>MVVM\Model\SemesterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.Model.UserModel">
+    <Position X="7.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAEAAAAAAACAAAAQgAAAAAAACAAAAAAAAE=</HashCode>
+      <FileName>MVVM\Model\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.Model.ValidationModel">
+    <Position X="3.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAQAAAAAAAAAAAAAAAAAAAEAAAAAAAAAACggAAAAAA=</HashCode>
+      <FileName>MVVM\Model\ValidationModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.View.LoginView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAEAAAAAAAAAAABAAAAAAAAAAAAAAAAABAAIAAAA=</HashCode>
+      <FileName>MVVM\View\LoginView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.View.MainView" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEABAAAAAAAAAAAAAJEgAAgAAAAAAIAAAAABAAACAAA=</HashCode>
+      <FileName>MVVM\View\MainView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Pages.HomePg" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAgAAAEAAAAIAAAAAAAQgQAABAYiAAAAQAAAIAAAA=</HashCode>
+      <FileName>MVVM\View\Pages\HomePg.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Pages.ModulesPg" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAEAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\Pages\ModulesPg.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Pages.MusicPg" BaseTypeListCollapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAEAAAAABAgAAAEAgABCAAAAAAAQAAAAAA=</HashCode>
+      <FileName>MVVM\View\Pages\MusicPg.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Pages.SemesterPg" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAEAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\Pages\SemesterPg.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Pages.SettingsPg" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgABAAAAgAAAAA=</HashCode>
+      <FileName>MVVM\View\Pages\SettingsPg.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.View.Pages.StudyPg" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAQIAAAQAAAAAAFIAAAAEIAAAAAAAgAAAAg=</HashCode>
+      <FileName>MVVM\View\Pages\StudyPg.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.View.UserControls.UserCntrlClock" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAoAAAACAAAAA=</HashCode>
+      <FileName>MVVM\View\UserControls\UserCntrlClock.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.UserControls.UserCntrlLogin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\UserControls\UserCntrlLogin.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.UserControls.UserCntrlSignUp" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MVVM\View\UserControls\UserCntrlSignUp.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.ViewModel.AppThemes" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>MVVM\ViewModel\AppThemes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.ViewModel.MainViewModel">
+    <Position X="1.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACACAAAAAAAAAAAAAECAAAAAAAAAAAAAggAA=</HashCode>
+      <FileName>MVVM\ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.ViewModel.ModulesViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAACAAAAABAAAJAgCAAAAgAJAAAAAAAAAAAAIgAg=</HashCode>
+      <FileName>MVVM\ViewModel\ModulesViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.ViewModel.NoteViewModel" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAggAAAAAAAAAAAAAIAgA=</HashCode>
+      <FileName>MVVM\ViewModel\NoteViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.ViewModel.SemesterViewModel" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAIAAAAAIAAgAAAAgQAAAAACAAAAAAEIAAA=</HashCode>
+      <FileName>MVVM\ViewModel\SemesterViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.ViewModel.StudyPgViewModel" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAACAAAAAAA=</HashCode>
+      <FileName>MVVM\ViewModel\StudyPgViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.MVVM.ViewModel.UserViewModel">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAEAAAAAAAAAAAQAAAAAAAAIAAA=</HashCode>
+      <FileName>MVVM\ViewModel\UserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Properties.Resources" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.Properties.Settings">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSetTableAdapters.ModuleTableAdapter" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSetTableAdapters.NotesTableAdapter">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSetTableAdapters.SemesterTableAdapter">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSetTableAdapters.UserTableAdapter">
+    <Position X="11.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSetTableAdapters.TableAdapterManager">
+    <Position X="9.5" Y="6.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Prog6212_POE_ST10150631.StudySyncDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption" Collapsed="true">
+        <TypeIdentifier />
+      </Enum>
+      <Class Name="Prog6212_POE_ST10150631.StudySyncDBDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQBAACAAAAJABAEhAAAEMAAgAAQCgAAAAAQAAIAQBAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

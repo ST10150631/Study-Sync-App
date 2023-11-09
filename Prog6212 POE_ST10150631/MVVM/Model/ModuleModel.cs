@@ -68,12 +68,14 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             int SelfHrs = 0;
             Semester foundSemester = MainViewModel.SemestersViewModel.SearchSemester(SemesterName);
             // Query for inserting data into the database
-            string Query = "INSERT INTO dbo.[Module] (ModuleName, ModuleCode, WeeklyClassHrs, WeeklySelfHrs,CompletedSelfHrs,WeekWhenAdded, Credits, SemesterName, Username) " +
-                           "VALUES (@ModuleName, @ModuleCode, @WeeklyClassHrs, @WeeklySelfHrs,@CompletedSelfHrs,@WeekWhenAdded, @Credits, @SemesterName, @Username);";
-             double WeeklySelfHrs = CalculateSelfStudyHrs(WeeklyClassHrs, Credits, foundSemester.Weeks);
+            string Query = "INSERT INTO dbo.[Module] (ModuleName, ModuleCode, WeeklyClassHrs, WeeklySelfHrs,CompletedSelfHrs,WeekWhenAdded, Credits, SemesterName,SemesterID, Username) " +
+                           "VALUES (@ModuleName, @ModuleCode, @WeeklyClassHrs, @WeeklySelfHrs,@CompletedSelfHrs,@WeekWhenAdded, @Credits, @SemesterName,@SemesterID ,@Username);";
+            int SemID = MainViewModel.SemestersViewModel.SearchSemesterID(SemesterName);
+
+            double WeeklySelfHrs = CalculateSelfStudyHrs(WeeklyClassHrs, Credits, foundSemester.Weeks);
             try
             {
-                
+
 
                 using (SqlConnection SQLconnect = new SqlConnection(ConnectionString))
                 {
@@ -86,6 +88,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
                     command.Parameters.AddWithValue("@WeekWhenAdded", SelfHrs);
                     command.Parameters.AddWithValue("@Credits", Credits);
                     command.Parameters.AddWithValue("@SemesterName", SemesterName);
+                    command.Parameters.AddWithValue("@SemesterID", SemID);
                     command.Parameters.AddWithValue("@Username", username);
 
                     // Opens the SQL connection
@@ -107,8 +110,11 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             newModule.ModuleCode = Code;
             newModule.WeeklyClassHrs = WeeklyClassHrs;
             newModule.WeeklySelfHrs = (int)WeeklySelfHrs;
+            newModule.CompletedSelfHrs = SelfHrs;
+            newModule.WeekWhenAdded = SelfHrs;
             newModule.Credits = Credits;
-            newModule.SemesterName  = SemesterName;
+            newModule.SemesterName = SemesterName;
+            newModule.SemesterID = SemID;
             newModule.Username = username;
 
             return newModule;
@@ -136,26 +142,21 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         //======================================================= End of Method ===================================================
 
         /// <summary>
-        /// 
+        ///  Resets the Hrs studied to 0
         /// </summary>
         /// <param name="username"></param>
         /// <param name="Week"></param>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public void ResetHrsStudied(string username)
         {
-            double HrsStudied = 0;
-            string query = "UPDATE dbo.[Module] SET CompletedSelfHrs = @HrsStudied WHERE Username = @Username ;";
+            string query = $"UPDATE dbo.[Module] SET CompletedSelfHrs = 0 WHERE Username = '{username}' ;";
             using (SqlConnection sqlConnect = new SqlConnection(ConnectionString))
             {
                 sqlConnect.Open();
 
-                using (SqlCommand cmd = new SqlCommand(query, sqlConnect))
-                {
-                    cmd.Parameters.Add(new SqlParameter("@HrsStudied", SqlDbType.Float)).Value = HrsStudied;
-                    cmd.Parameters.Add(new SqlParameter("@Username", SqlDbType.NVarChar)).Value = username;
+                SqlCommand cmd = new SqlCommand(query, sqlConnect);
 
-                    cmd.ExecuteNonQuery();
-                }
+                cmd.ExecuteNonQuery();
             }
         }
         //======================================================= End of Method ===================================================

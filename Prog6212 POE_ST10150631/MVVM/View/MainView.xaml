@@ -187,7 +187,7 @@
                         </RadioButton>
 
 
-                         <!--Music   radio Btn--><!-- 
+                         <!--Music   radio Btn--> 
                         <RadioButton x:Name="RbtnMusic" Style="{DynamicResource menuButton}" Height="57"  Margin="20,0,0,0" Checked="RbtnMusic_Checked" >
 
                             <StackPanel Orientation="Horizontal" >
@@ -195,7 +195,7 @@
                                 <TextBlock Text="Music " Style="{DynamicResource menuButtonText}" />
 
                             </StackPanel>
-                        </RadioButton>-->
+                        </RadioButton>
 
 
                         <!-- Settings   radio Btn -->

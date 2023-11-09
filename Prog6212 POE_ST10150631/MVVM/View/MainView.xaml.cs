@@ -199,6 +199,7 @@ namespace Prog6212_POE_ST10150631.MVVM.View
 
         private void BtnLogout_Click(object sender, RoutedEventArgs e)
         {
+            MainViewModel.NoteViewModel.NoteData.Clear();
             LoginView login = new LoginView();
             login.Show();
             Window parentWindow = Window.GetWindow(this);

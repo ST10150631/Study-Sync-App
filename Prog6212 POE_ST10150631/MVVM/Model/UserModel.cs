@@ -17,10 +17,14 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         /// <summary>
         /// Default constructor
         /// </summary>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public UserModel()
         {
 
         }
+        //======================================================= End of Method ===================================================
+
+
 
         /// <summary>
         /// Takes User Input for sign Up and adds user to database if all data valid
@@ -29,6 +33,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         /// <param name="FistName"></param>
         /// <param name="Surname"></param>
         /// <param name="Password"></param>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public bool RegisterUser(string Username, string FirstName, string Surname, string Password)
         {
             //Hashing the password 
@@ -37,7 +42,16 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             string NewUserQuery = "INSERT INTO dbo.[User] (Username, FirstName, Surname,PasswordHash ) VALUES (@Username,@FirstName,@Surname,@PasswordHash);";
             if (GetUserDetails(Username) == null)
             {
-
+                //using(var dbContext = new StudySyncDBEntities())
+                //{
+                //    var NewUser = new User();
+                //    NewUser.FirstName = FirstName;
+                //    NewUser.Surname = Surname;
+                //    NewUser.Username = Username;
+                //    NewUser.PasswordHash = HashedPassword;
+                //    dbContext.Users.Add(NewUser);
+                //    dbContext.SaveChanges();
+                //}
 
                 using (SqlConnection SQLconnect = new SqlConnection(ConnectionString))
                 {
@@ -58,12 +72,17 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             }
             return false;
         }
+        //======================================================= End of Method ===================================================
+
+
+
         /// <summary>
         /// Logs the user in and verifies password
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public bool LoginUser(string username, string password)
         {
             UserEntity = new User();
@@ -78,12 +97,16 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             }
             return false;
         }
+        //======================================================= End of Method ===================================================
+
+
 
         /// <summary>
         /// Gets the user using the username
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public User GetUserDetails(string username)
         {
             UserEntity = new User();
@@ -105,12 +128,16 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
             }
 
         }
+        //======================================================= End of Method ===================================================
+
+
 
         /// <summary>
         /// Hashes and salts the password to be saved to database 
         /// </summary>
         /// <param name="password"></param>
         /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         private string HashPassword(string password)
         {
             // Generate a random salt
@@ -136,6 +163,9 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
                 return base64Hash;
             }
         }
+        //======================================================= End of Method ===================================================
+
+
 
         /// <summary>
         /// Verifies that the username and password match
@@ -143,6 +173,7 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
         /// <param name="enteredPassword"></param>
         /// <param name="storedPasswordHash"></param>
         /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
         private static bool VerifyPassword(string enteredPassword, string storedPasswordHash)
         {
             // Convert the stored password hash back to bytes
@@ -169,5 +200,9 @@ namespace Prog6212_POE_ST10150631.MVVM.Model
                 return true; // Passwords match
             }
         }
+        //======================================================= End of Method ===================================================
+
+
+
     }
 }

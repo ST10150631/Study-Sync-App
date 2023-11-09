@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 
 namespace Prog6212_POE_ST10150631.MVVM.Model
 {

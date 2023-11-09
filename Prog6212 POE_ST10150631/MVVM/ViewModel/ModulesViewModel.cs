@@ -91,7 +91,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         public void NewWeek()
         {
             var user = MainViewModel.UserViewModel.LoggedInUser;
-            foreach(var module in ModuleData)
+            foreach (var module in ModuleData)
             {
                 module.CompletedSelfHrs = 0;
             }
@@ -110,7 +110,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         {
             _moduleData.Clear();
             ModuleData.Clear();
-            OnPropertyChanged(nameof(ModuleData));  
+            OnPropertyChanged(nameof(ModuleData));
         }
         //======================================================= End of Method ===================================================
 
@@ -155,7 +155,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         /// <param name="code"></param>
         /// <returns></returns>
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
-        public bool IsNewModule(string name, string code) 
+        public bool IsNewModule(string name, string code)
         {
             string username = MainViewModel.UserViewModel.LoggedInUser;
             var foundName = ModuleData.FirstOrDefault(module => module.ModuleName == name);
@@ -164,7 +164,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             {
                 return false;
             }
-            else if (ModuleData.Contains(foundCode)) 
+            else if (ModuleData.Contains(foundCode))
             {
                 return false;
             }
@@ -187,7 +187,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         public void UpdateCompletedSelfHrs(string moduleName, double hrsStudied, int CurrentWeek)
         {
             Module moduleToUpdate = ModuleData.FirstOrDefault(module => module.ModuleName == moduleName);
-            hrsStudied = Math.Round(hrsStudied,2);
+            hrsStudied = Math.Round(hrsStudied, 2);
             if (moduleToUpdate != null)
             {
                 model.AddHrsStudied(moduleName, hrsStudied, CurrentWeek);
@@ -196,7 +196,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 
                 OnPropertyChanged(nameof(ModuleData));
             }
-            
+
         }
         //======================================================= End of Method ===================================================
 
@@ -214,7 +214,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             model.DeleteModule(ModuleName);
             ModuleData.Remove(SelectedMod);
             OnPropertyChanged(nameof(ModuleData));
-        }        
+        }
         //======================================================= End of Method ===================================================
 
 

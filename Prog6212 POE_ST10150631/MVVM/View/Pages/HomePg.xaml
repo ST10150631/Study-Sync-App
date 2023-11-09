@@ -92,7 +92,7 @@
                 </Button>
 
 
-                <!--<Button x:Name="BtnMusic" Grid.Row="2" Grid.Column="3" Style="{DynamicResource HomeButtons}" Background="#6c419e" Click="BtnMusic_Click">
+                <Button x:Name="BtnMusic" Grid.Row="2" Grid.Column="3" Style="{DynamicResource HomeButtons}" Background="#6c419e" Click="BtnMusic_Click">
                     <StackPanel>
                         <StackPanel>
                             <fa:IconImage Icon="ItunesNote" Foreground="White" Height="50" Width="72" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -102,7 +102,7 @@
                         </StackPanel>
                     </StackPanel>
 
-                </Button>-->
+                </Button>
 
 
                 <Button x:Name="BtnSettings" Grid.Row="2" Grid.Column="4" Style="{DynamicResource HomeButtons}" Background="#6e737a" Click="BtnSettings_Click">

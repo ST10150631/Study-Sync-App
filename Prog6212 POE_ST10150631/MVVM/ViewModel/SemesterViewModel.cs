@@ -9,12 +9,23 @@ using Prog6212_POE_ST10150631.MVVM.Model;
     using System.Windows.Input;
 using System.Windows.Media.Media3D;
 using System.Runtime.CompilerServices;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
+using System.Threading;
 
 namespace Prog6212_POE_ST10150631.MVVM.ViewModel
 {
     public class SemesterViewModel : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Instance of SemesterModel
+        /// </summary>
         private SemesterModel model = new SemesterModel();
+        Thread DataThread;
+        /// <summary>
+        /// Observable collection to display data from the database
+        /// </summary>
         private ObservableCollection<Semester> _semesterData;
 
         public ObservableCollection<Semester> SemesterData
@@ -56,11 +67,23 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         /// ----------------------------------------------------- Start of Method ------------------------------------------------
         public Semester SearchSemester(string Name)
         {
-                var foundSemester = SemesterData.FirstOrDefault(Sem => Sem.SemesterName == Name);
+            var foundSemester = SemesterData.FirstOrDefault(Sem => Sem.SemesterName == Name);
             return foundSemester;
         }
         //======================================================= End of Method ===================================================
 
+        /// <summary>
+        /// Searches for a semester ID in the database based on the name and user
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <returns></returns>
+        /// ----------------------------------------------------- Start of Method ------------------------------------------------
+        public int SearchSemesterID(string Name)
+        {
+            var foundSemester = model.SearchID(Name);
+            return foundSemester;
+        }
+        //======================================================= End of Method ===================================================
 
 
         /// <summary>
@@ -73,9 +96,14 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         public void AddSemester(string SemesterName, double Weeks, DateTime StartDate)
         {
             var user = MainViewModel.UserViewModel.LoggedInUser;
-            var NewSem = model.AddNewSemester(SemesterName, Weeks, StartDate,user );
-            SemesterData.Add(NewSem);   
-            OnPropertyChanged(nameof(SemesterData));
+            var NewSem = model.AddNewSemester(SemesterName, Weeks, StartDate, user);
+            if (NewSem != null)
+            {
+                SemesterData.Add(NewSem);
+                OnPropertyChanged(nameof(SemesterData));
+
+            }
+
         }
         //======================================================= End of Method ===================================================
 
@@ -88,12 +116,12 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
             List<Semester> tempData = new List<Semester>();
             tempData = model.GetAllSemesters(MainViewModel.UserViewModel.LoggedInUser);
             _semesterData.Clear();
-            foreach(var semester in tempData)
+            foreach (var semester in tempData)
             {
                 _semesterData.Add(semester);
             }
             SemesterData = _semesterData;
-             OnPropertyChanged(nameof(SemesterData));
+            OnPropertyChanged(nameof(SemesterData));
         }
         //======================================================= End of Method ===================================================
 
@@ -107,7 +135,7 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
         {
             var SelectedSem = SemesterData.FirstOrDefault(Sem => Sem.SemesterName == SemesterName);
             model.DeleteSemester(SemesterName);
-            SemesterData.Remove(SelectedSem) ;
+            SemesterData.Remove(SelectedSem);
             OnPropertyChanged(nameof(SemesterData));
         }
         //======================================================= End of Method ===================================================
@@ -116,3 +144,4 @@ namespace Prog6212_POE_ST10150631.MVVM.ViewModel
     }
 
 }
+
