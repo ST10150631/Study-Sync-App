@@ -83,7 +83,11 @@ namespace Prog6212_POE_ST10150631.Pages
 
 
 
-
+        /// <summary>
+        /// Plays the song in the previous count of the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnSkipBack_Click(object sender, RoutedEventArgs e)
         {
             if (SongList.Count >= 0)
@@ -99,6 +103,11 @@ namespace Prog6212_POE_ST10150631.Pages
             }
         }
 
+        /// <summary>
+        /// Plays the current song
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
         {
             if(SongList.Count > 0)
@@ -106,14 +115,22 @@ namespace Prog6212_POE_ST10150631.Pages
                 PlayCurrentSong();
             }
         }
-
+        /// <summary>
+        /// Stops the MusicPlayer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnStop_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.MusicPlayer.Stop();
             CurrentSong = 0;
             txtSongTitle.Text = SongNames[CurrentSong];
         }
-
+        /// <summary>
+        /// Pauses the music player
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPause_Click(object sender, RoutedEventArgs e)
         {
             MainViewModel.MusicPlayer.Pause();
@@ -138,7 +155,11 @@ namespace Prog6212_POE_ST10150631.Pages
         }
 
 
-
+        /// <summary>
+        /// Allows the user to upload their own mp3 files and play them 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnUpload_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -163,6 +184,9 @@ namespace Prog6212_POE_ST10150631.Pages
                 }
             }
         }
+        /// <summary>
+        /// Plays the current song
+        /// </summary>
         private void PlayCurrentSong()
         {
             if (SongList.Count > 0)
