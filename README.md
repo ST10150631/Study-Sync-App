@@ -200,13 +200,17 @@ The project should run if you have have all the requirements
 
 ![Screenshot 2023-09-22 121840](https://github.com/ST10150631/Study-Sync-App/assets/101188233/9322622d-5338-4786-b615-167378a7ae61)
 
+### Music Page
+![image](https://github.com/ST10150631/Study-Sync-App/assets/101188233/7bd1b931-0920-4301-a3cf-e35768dfabda)
+The user Can press pause ,play,next, and previous as well as add songs to play.
+
 ## Changes and Updates:
 * The app now has a database and user data will persist
 * Users can Sign up and Login
 * Modules and semesters will persist for multiple runs
 * User info will be displayed on the window
 * User can reset the hours studied for each week using the reset week button
-
+* The user Can now play music and upload their own music
 
 
 
